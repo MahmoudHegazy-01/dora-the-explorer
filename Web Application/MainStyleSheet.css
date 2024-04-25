@@ -1,7 +1,12 @@
 body {
   color: blue;
   text-shadow: 50px;
+  align-content: center;
+  align-items: center;
+  background-color: #fae8e0;
 }
 .tes {
-  color: green;
+  color: #d8a7b1;
+  align-items: center;
+  text-align: center;
 }
