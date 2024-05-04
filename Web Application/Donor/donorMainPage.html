@@ -74,17 +74,13 @@
                 <li><a class="dropdown-item" href="#"onclick="fillFilter('Blood')">Blood Donations</a></li>
                 <li><a class="dropdown-item" href="#"onclick="fillFilter('Food')">Food</a></li>
               </ul>
-              <a class="nav-link dropdown-toggle" href="#" id="filterDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Filter
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              </ul>
+              <select id="filterDropDown" onchange="fillValues()">
+                <option>Filter</option>
+            </select>
               <!--Values dropdown so that I can filter based on the value (ex: age = 2-4,...)-->
-              <a style ="display: none;"class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Values
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              </ul>
+              <select id="valuesDropDown" style="display: none">
+                <option>Values</option>
+            </select>
             </div>
             
           </header>

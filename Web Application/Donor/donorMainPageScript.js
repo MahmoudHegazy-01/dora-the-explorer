@@ -25,30 +25,61 @@ function searchFunction() {
   {
     if(obj.localeCompare("Toys") == 0)
       {
-        let arr = ["age","gender","category"]
+        let arr = ["none","age","gender","category"];
         fillDropDown(arr,"filterDropDown");
       }
     if(obj.localeCompare("Clothes") == 0)
-      document.body.style.backgroundColor = "blue";
+      {
+        let arr = ["none","age","gender","season"];
+        fillDropDown(arr,"filterDropDown");
+      }
     if(obj.localeCompare("School") == 0)
-      document.body.style.backgroundColor = "green";
+      {
+        let arr = ["none","Books","Stationary"];
+        fillDropDown(arr,"filterDropDown");
+      }
     if(obj.localeCompare("Medical") == 0)
-      document.body.style.backgroundColor = "yellow";
+      {
+        let arr = ["none","Medical Devices","Medical Equipment","Medication"];
+        fillDropDown(arr,"filterDropDown");
+      }
     if(obj.localeCompare("Blood") == 0)
-      document.body.style.backgroundColor = "black";
+      {
+        let arr = ["none","Hospital","Area","Governorate"];
+        fillDropDown(arr,"filterDropDown");
+      }
     if(obj.localeCompare("Food") == 0)
-      document.body.style.backgroundColor = "white";
+      {
+        let arr = ["none","Fruits & Vegetables","Canned Foods","Fresh Meals","Baked Goods"];
+        fillDropDown(arr,"filterDropDown");
+      }
   }
 
 
   function fillDropDown(obj,dropDown)
   {
-    let select = document.getElementById("dropDown");
+
+    let select = document.getElementById(dropDown);
+    removeOptions(select);
     for (let i = 0; i < obj.length; i++) {
       let optn = obj[i];
-      let el = document.createElement("li");
+      let el = document.createElement("option");
       el.textContent = optn;
       el.value = optn;
       select.appendChild(el);
   }
+  
   }
+
+  function removeOptions(selectElement) {
+    var i, L = selectElement.options.length - 1;
+    for(i = L; i >= 0; i--) {
+       selectElement.remove(i);
+    }
+ }
+
+ function fillValues()
+ {
+  document.getElementById("valuesDropDown").style.display = "";
+  
+ }
