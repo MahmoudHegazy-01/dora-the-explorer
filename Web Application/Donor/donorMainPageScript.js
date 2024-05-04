@@ -20,3 +20,35 @@ function searchFunction() {
       }
     }
   }
+
+  function fillFilter(obj)
+  {
+    if(obj.localeCompare("Toys") == 0)
+      {
+        let arr = ["age","gender","category"]
+        fillDropDown(arr,"filterDropDown");
+      }
+    if(obj.localeCompare("Clothes") == 0)
+      document.body.style.backgroundColor = "blue";
+    if(obj.localeCompare("School") == 0)
+      document.body.style.backgroundColor = "green";
+    if(obj.localeCompare("Medical") == 0)
+      document.body.style.backgroundColor = "yellow";
+    if(obj.localeCompare("Blood") == 0)
+      document.body.style.backgroundColor = "black";
+    if(obj.localeCompare("Food") == 0)
+      document.body.style.backgroundColor = "white";
+  }
+
+
+  function fillDropDown(obj,dropDown)
+  {
+    let select = document.getElementById("dropDown");
+    for (let i = 0; i < obj.length; i++) {
+      let optn = obj[i];
+      let el = document.createElement("li");
+      el.textContent = optn;
+      el.value = optn;
+      select.appendChild(el);
+  }
+  }
