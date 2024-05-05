@@ -184,6 +184,16 @@ function unHideTable()
       let arr = ["Orthopedics","Eyes","Dental","Surgery"];
       fillDropDown(arr,"valuesDropDown");
     }
+  if(element.value.localeCompare("Stationary")==0)
+  {
+    let arr = ["","Stationary"];
+    fillDropDown(arr,"valuesDropDown");
+  }
+  if(element.value.localeCompare("Books")==0)
+  {
+    let arr = ["","Books"];
+    fillDropDown(arr,"valuesDropDown");
+  }
   if(element.value.localeCompare("none")==0)
     {
       
@@ -193,24 +203,26 @@ function unHideTable()
 
  function searchUsingValues()
  {
-  let element = document.getElementById("valuesDropDown").options[document.getElementById("filterDropDown").options["selectedIndex"]];
-  console.log(element);
-  searchFunctionValues(element);
+  let element = document.getElementById("valuesDropDown").options[document.getElementById("valuesDropDown").options["selectedIndex"]];
+  unHideTable();
+  searchFunctionValues(element.value);
  }
 
  function searchFunctionValues(obj) {
   // Declare variables
   var input, filter, table, tr, td, i, txtValue;
   input = obj;
+  console.log("Input" + input);
   filter = input;
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
 
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
+    td = tr[i].getElementsByTagName("td")[2];
     if (td) {
       txtValue = td.innerText;
+      console.log("TxtValue" + txtValue);
       if (txtValue.indexOf(filter) > -1) {
         tr[i].style.display = "";
       } else {
