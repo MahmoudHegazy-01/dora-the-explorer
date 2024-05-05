@@ -11,39 +11,84 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="MainStyleSheet.css" />
+    <link rel="stylesheet" href="/Web Application/MainStyleSheet.css" />
     </head>
     <body>
-        <!--Navigation Bar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Insert LOGO</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">About Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Notification
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
+<!-- Nav Bar -->
+      <header>
+        <div class="px-3 py-2 text-bg-dark border-bottom">
+          <div class="container">
+            <div
+              class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+            >
+              <a
+                href="/"
+                class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
+              >
+                <svg
+                  class="bi me-2"
+                  width="40"
+                  height="32"
+                  role="img"
+                  aria-label="Bootstrap"
+                >
+                  <use xlink:href="#bootstrap"></use>
+                </svg>
+              </a>
+
+              <ul
+                class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
+              >
+                <li>
+                  <a href="#" class="nav-link text-secondary" onClick="home()">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                      <use xlink:href="#home"></use>
+                    </svg>
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="nav-link text-white"
+                    onClick="assignNumber1();handleClick(event);"
+                  >
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                      <use xlink:href="#speedometer2"></use>
+                    </svg>
+                    Lists
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="nav-link text-white"
+                    onClick="assignNumber2();handleClick(event);"
+                  >
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                      <use xlink:href="#table"></use>
+                    </svg>
+                    Submissions
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="nav-link text-white"
+                    onClick="assignNumber3();handleClick(event);"
+                  >
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                      <use xlink:href="#grid"></use>
+                    </svg>
+                    Requests
+                  </a>
+                </li>
+                <li>
                   <li  class="nav-item dropdown">
                     <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                        <use xlink:href="#grid"></use>
+                      </svg>
                       Profile
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -51,16 +96,20 @@
                       <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
                     </ul>
                   </li>
-                </ul>
-              </div>
+                    
+                  
+                </li>
+              </ul>
             </div>
-          </nav>
-
+          </div>
+        </div>
+      </header>
+<!-- Nav Bar End -->
           <!--Search-->
           <header class="py-3 mb-4 border-bottom">
             <div  class="container d-flex flex-wrap justify-content-center" >
               <form class="col-12 col-lg-auto mb-3 mb-lg-0" >
-                <input type="search" class="form-control" onkeyup="searchFunction()"  placeholder="Search..." aria-label="Search">
+                <input id="myInput" type="search" class="form-control" onkeyup="searchFunction('myInput')"  placeholder="Search..." aria-label="Search">
               </form>
 
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
