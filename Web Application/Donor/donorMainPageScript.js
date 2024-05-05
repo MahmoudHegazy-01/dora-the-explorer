@@ -1,8 +1,7 @@
-function searchFunction(obj) {
+function searchFunction() {
     // Declare variables
     var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById(obj);
-    console.log(input);
+    input = document.getElementById('myInput');
     filter = input.value.toUpperCase();
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
@@ -12,7 +11,27 @@ function searchFunction(obj) {
       td = tr[i].getElementsByTagName("td")[1];
       if (td) {
         txtValue = td.innerText;
-        console.log(txtValue);
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+  function searchFunction(obj) {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = obj;
+    filter = input.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+  
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[1];
+      if (td) {
+        txtValue = td.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
           tr[i].style.display = "";
         } else {
@@ -24,6 +43,8 @@ function searchFunction(obj) {
 
   function fillFilter(obj)
   {
+    if(obj.localeCompare("None") != 0)
+    {
     searchFunction(obj);
     if(obj.localeCompare("Toys") == 0)
       {
@@ -65,9 +86,27 @@ function searchFunction(obj) {
         let arr = ["none","Subject","Area","Governorate"];
         fillDropDown(arr,"filterDropDown");
       }
+    }
+    else{
+      let arr = ["Filter"];
+      fillDropDown(arr,"filterDropDown");
+      unHideTable();
+    }
       
   }
+  //Shows all table elements
+function unHideTable()
+{
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      tr[i].style.display = "";
 
+    }
+
+}
 
   function fillDropDown(obj,dropDown)
   {
@@ -151,3 +190,32 @@ function searchFunction(obj) {
       document.getElementById("valuesDropDown").style.display = "none";
     }
  }
+
+ function searchUsingValues()
+ {
+  let element = document.getElementById("valuesDropDown").options[document.getElementById("filterDropDown").options["selectedIndex"]];
+  console.log(element);
+  searchFunctionValues(element);
+ }
+
+ function searchFunctionValues(obj) {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = obj;
+  filter = input;
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.innerText;
+      if (txtValue.indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}

@@ -112,11 +112,12 @@
                 <input id="myInput" type="search" class="form-control" onkeyup="searchFunction('myInput')"  placeholder="Search..." aria-label="Search">
               </form>
 
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a   class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Categories
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#" onclick="fillFilter('Toys')">Toys</a></li>
+                <li><a class="dropdown-item" href="#"onclick="fillFilter('None')">None</a></li>
+                <li><a class="dropdown-item" href="#"onclick="fillFilter('Toys')">Toys</a></li>
                 <li><a class="dropdown-item" href="#"onclick="fillFilter('Clothes')">Clothes</a></li>
                 <li><a class="dropdown-item" href="#"onclick="fillFilter('School')">School Supplies</a></li>
                 <li><a class="dropdown-item" href="#"onclick="fillFilter('Medical')">Medical Supplies</a></li>
@@ -129,7 +130,7 @@
                 <option>Filter</option>
             </select>
               <!--Values dropdown so that I can filter based on the value (ex: age = 2-4,...)-->
-              <select id="valuesDropDown" style="display: none">
+              <select id="valuesDropDown" style="display: none" onchange="searchUsingValues()">
                 <option>Values</option>
             </select>
             </div>
@@ -147,7 +148,7 @@
             <tr>
               <td>Charity 1</td>
               <td>Toys</td>
-              <td>2-4 years, male, winter</td>
+              <td>0-2 years, male, winter</td>
               <td> Lego</td>
               <td><a href="#">View Details </a></td>
             </tr>
