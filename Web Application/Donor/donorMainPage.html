@@ -109,23 +109,19 @@
           <header class="py-3 mb-4 border-bottom">
             <div  class="container d-flex flex-wrap justify-content-center" >
               <form class="col-12 col-lg-auto mb-3 mb-lg-0" >
-                <input id="myInput" type="search" class="form-control" onkeyup="searchFunction('myInput')"  placeholder="Search..." aria-label="Search">
+                <input id="myInput" type="search" class="form-control" onkeyup="searchFunction()"  placeholder="Search..." aria-label="Search">
               </form>
-
-              <a   class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Categories
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#"onclick="fillFilter('None')">None</a></li>
-                <li><a class="dropdown-item" href="#"onclick="fillFilter('Toys')">Toys</a></li>
-                <li><a class="dropdown-item" href="#"onclick="fillFilter('Clothes')">Clothes</a></li>
-                <li><a class="dropdown-item" href="#"onclick="fillFilter('School')">School Supplies</a></li>
-                <li><a class="dropdown-item" href="#"onclick="fillFilter('Medical')">Medical Supplies</a></li>
-                <li><a class="dropdown-item" href="#"onclick="fillFilter('Blood')">Blood Donations</a></li>
-                <li><a class="dropdown-item" href="#"onclick="fillFilter('Food')">Food</a></li>
-                <li><a class="dropdown-item" href="#"onclick="fillFilter('Teaching')">Teaching</a></li>
-                <li><a class="dropdown-item" href="#"onclick="fillFilter('Medical Cases')">Medical Cases</a></li>
-              </ul>
+              <select id = "categoryDropDown" onchange="fillFilter(value)">
+                <option value = "None">Categories</option>
+                <option value = "Toys">Toys</option>
+                <option value = "Clothes">Clothes</option>
+                <option value = "School">School Supplies</option>
+                <option value = "Medical">Medical Supplies</option>
+                <option value = "Blood">Blood Donations</option>
+                <option value = "Food">Food</option>
+                <option value = "Teaching">Teaching</option>
+                <option value = "Medical Cases">Medical Cases</option>
+              </select>
               <select id="filterDropDown" onchange="fillValues()">
                 <option>Filter</option>
             </select>

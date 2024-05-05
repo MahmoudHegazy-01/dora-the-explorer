@@ -2,7 +2,8 @@ function searchFunction() {
     // Declare variables
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById('myInput');
-    filter = input.value.toUpperCase();
+    console.log(input);
+    filter = input.toUpperCase();
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
   
@@ -23,7 +24,7 @@ function searchFunction() {
     // Declare variables
     var input, filter, table, tr, td, i, txtValue;
     input = obj;
-    filter = input.toUpperCase();
+    filter = input.value.toUpperCase();
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
   
@@ -204,15 +205,15 @@ function unHideTable()
  function searchUsingValues()
  {
   let element = document.getElementById("valuesDropDown").options[document.getElementById("valuesDropDown").options["selectedIndex"]];
+  let Category = document.getElementById("categoryDropDown").options[document.getElementById("categoryDropDown").options["selectedIndex"]];
   unHideTable();
-  searchFunctionValues(element.value);
+  searchFunctionValues(element.value,Category.value);
  }
 
- function searchFunctionValues(obj) {
+ function searchFunctionValues(obj,Category) {
   // Declare variables
   var input, filter, table, tr, td, i, txtValue;
   input = obj;
-  console.log("Input" + input);
   filter = input;
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
@@ -220,10 +221,11 @@ function unHideTable()
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[2];
+    td1 = tr[i].getElementsByTagName("td")[1];
     if (td) {
       txtValue = td.innerText;
-      console.log("TxtValue" + txtValue);
-      if (txtValue.indexOf(filter) > -1) {
+      txtCategory = td1.innerText;
+      if (txtValue.indexOf(filter) > -1 && txtCategory.indexOf(Category)> -1) {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";
