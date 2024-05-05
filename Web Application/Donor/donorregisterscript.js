@@ -35,7 +35,7 @@
       console.log("Please help me");
       return false;
     }
-    window.location.href = "/WEB APPLICATION/login.html";
+    window.location.href = "/Web Application/login.html";
     return true;
   }
   
