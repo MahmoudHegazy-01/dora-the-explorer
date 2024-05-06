@@ -1,9 +1,9 @@
-function searchFunction() {
+function searchFunction1() {
     // Declare variables
     var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById('myInput');
+    input = document.getElementById("myInput");
     console.log(input);
-    filter = input.toUpperCase();
+    filter = input.value.toUpperCase();
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
   
@@ -24,7 +24,7 @@ function searchFunction() {
     // Declare variables
     var input, filter, table, tr, td, i, txtValue;
     input = obj;
-    filter = input.value.toUpperCase();
+    filter = input.toUpperCase();
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
   
@@ -192,7 +192,7 @@ function unHideTable()
   }
   if(element.value.localeCompare("Books")==0)
   {
-    let arr = ["","Books"];
+    let arr = ["","Fiction","Non-Fiction"];
     fillDropDown(arr,"valuesDropDown");
   }
   if(element.value.localeCompare("none")==0)
