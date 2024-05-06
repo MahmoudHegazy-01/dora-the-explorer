@@ -2,7 +2,6 @@ function searchFunction1() {
     // Declare variables
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
-    console.log(input);
     filter = input.value.toUpperCase();
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
@@ -239,7 +238,16 @@ function unHideTable()
   let element = document.getElementById("valuesDropDown").options[document.getElementById("valuesDropDown").options["selectedIndex"]];
   let Category = document.getElementById("categoryDropDown").options[document.getElementById("categoryDropDown").options["selectedIndex"]];
   unHideTable();
+  if(element.value.localeCompare("none") != 0)
+    {
   searchFunctionValues(element.value,Category.value);
+    }
+  else
+  {
+    let Category = document.getElementById("categoryDropDown").options[document.getElementById("categoryDropDown").options["selectedIndex"]];
+    searchFunction(Category.value);
+  }
+
  }
 
  function searchFunctionValues(obj,Category) {
