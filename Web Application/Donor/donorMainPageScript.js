@@ -44,6 +44,7 @@ function searchFunction1() {
 
   function fillFilter(obj)
   {
+    document.getElementById("valuesDropDown").style.display = "none";
     if(obj.localeCompare("None") != 0)
     {
     searchFunction(obj);
@@ -137,67 +138,98 @@ function unHideTable()
   let element = document.getElementById("filterDropDown").options[document.getElementById("filterDropDown").options["selectedIndex"]];
   if(element.value.localeCompare("Age")==0)
     {
-      let arr = ["0-2 years","3-5 years","6-8 years","9-11 years","12-14 years"];
+      let arr = ["none","0-2 years","3-5 years","6-8 years","9-11 years","12-14 years"];
       fillDropDown(arr,"valuesDropDown");
     }
   if(element.value.localeCompare("Gender")==0)
     {
-      let arr = ["male","female","uni"];
+      let arr = ["none","male","female","uni"];
       fillDropDown(arr,"valuesDropDown");
     }
   if(element.value.localeCompare("Season")==0)
     {
-      let arr = ["summer","winter","autumn","fall"];
+      let arr = ["none","summer","winter","autumn","fall"];
       fillDropDown(arr,"valuesDropDown");
     }
   if(element.value.localeCompare("Medication")==0)
     {
-      let arr = ["Oral","Ingested","External"];
+      let arr = ["none","Oral","Ingested","External"];
       fillDropDown(arr,"valuesDropDown");
     }
   if(element.value.localeCompare("Category")==0)
     {
-      let arr = ["board games","stuffed toys","dolls","sports","cars","outdoor"];
+      let arr = ["none","board games","stuffed toys","dolls","sports","cars","outdoor"];
       fillDropDown(arr,"valuesDropDown");
     }  
   if(element.value.localeCompare("Area")==0)
   {
-    let arr = ["Fifth Settlement","Maadi","Nasr City","Madinaty","Rehab","6th of October","Sheikh Zayed"];
+    let arr = ["none","Fifth Settlement","Maadi","Nasr City","Madinaty","Rehab","6th of October","Sheikh Zayed"];
      fillDropDown(arr,"valuesDropDown");
   }
   if(element.value.localeCompare("Governorate")==0)
     {
-      let arr = ["Giza","Cairo","Alexanderia","Aswan","Dakahlia","Assiut","Luxor","Ismailia"];
+      let arr = ["none","Giza","Cairo","Alexanderia","Aswan","Dakahlia","Assiut","Luxor","Ismailia"];
       fillDropDown(arr,"valuesDropDown");
     }
   if(element.value.localeCompare("Hospital")==0)
     {
-      let arr = ["Cairo Hospital","Ain Shams Hospital","Ibn Sina Hospital","Dar el Fouad Hospital"];
+      let arr = ["none","Cairo Hospital","Ain Shams Hospital","Ibn Sina Hospital","Dar el Fouad Hospital"];
       fillDropDown(arr,"valuesDropDown");
     }
  if(element.value.localeCompare("Subject")==0)
     {
-      let arr = ["Math","Chemistery","Biology","English","Arabic","Physics","French","German"];
+      let arr = ["none","Math","Chemistry","Biology","English","Arabic","Physics","French","German"];
       fillDropDown(arr,"valuesDropDown");
     }
   if(element.value.localeCompare("Medical Speciality")==0)
     {
-      let arr = ["Orthopedics","Eyes","Dental","Surgery"];
+      let arr = ["none","Orthopedics","Eyes","Dental","Surgery"];
       fillDropDown(arr,"valuesDropDown");
     }
   if(element.value.localeCompare("Stationary")==0)
   {
-    let arr = ["","Stationary"];
+    let arr = ["none","Stationary"];
     fillDropDown(arr,"valuesDropDown");
   }
   if(element.value.localeCompare("Books")==0)
   {
-    let arr = ["","Fiction","Non-Fiction"];
+    let arr = ["none","Fiction","Physics","Biology","Time Management"];
     fillDropDown(arr,"valuesDropDown");
   }
+  if(element.value.localeCompare("Medical Devices") == 0)
+    {
+      let arr = ["none","Medical Devices"];
+      fillDropDown(arr,"valuesDropDown");
+    }
+  if(element.value.localeCompare("Medical Equipment") == 0)
+    {
+      let arr = ["none","Medical Equipment"];
+      fillDropDown(arr,"valuesDropDown");
+    }
+   if(element.value.localeCompare("Fruits & Vegetables") == 0)
+    {
+      let arr = ["none","Fruits","Vegetables"];
+      fillDropDown(arr,"valuesDropDown");
+    }
+   if(element.value.localeCompare("Canned Foods") == 0)
+    {
+      let arr = ["none","Canned Foods"];
+      fillDropDown(arr,"valuesDropDown");
+    }
+    if(element.value.localeCompare("Baked Goods") == 0)
+      {
+        let arr = ["none","Baked Goods"];
+        fillDropDown(arr,"valuesDropDown");
+      }
+   if(element.value.localeCompare("Fresh Meals") == 0)
+    {
+      let arr = ["none","Grilled","Vegan"];
+      fillDropDown(arr,"valuesDropDown");
+    }
   if(element.value.localeCompare("none")==0)
     {
-      
+      let Category = document.getElementById("categoryDropDown").options[document.getElementById("categoryDropDown").options["selectedIndex"]];
+      searchFunction(Category.value);
       document.getElementById("valuesDropDown").style.display = "none";
     }
  }
