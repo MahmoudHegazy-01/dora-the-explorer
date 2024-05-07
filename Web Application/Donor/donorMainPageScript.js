@@ -273,3 +273,11 @@ function unHideTable()
     }
   }
 }
+
+//Checks if the quantity is a postive number and then changes the webpage to schedule pickup
+function checkDonation()
+{
+
+
+  
+}
