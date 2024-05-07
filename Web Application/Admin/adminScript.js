@@ -1,6 +1,7 @@
 var dropdownElement; // Variable to store the reference to the dropdown
 var tabButton; //takes event
 var n;
+var password = "admin";
 
 function assignNumber1(){
     n=1;
@@ -123,4 +124,85 @@ function donsub() {
 }
 function orgsub() {
     window.location.href = "orgsubmissions.html";
+}
+
+function pass() {
+    window.location.href = "changepassword.html";
+}
+
+var oldpass;
+var newpass;
+var conpass;
+function changepass() {
+    if(document.getElementById("oldPassword")!==null && document.getElementById("newPassword")!==null && document.getElementById("confirmPassword")!==null){
+        oldpass = (String) (document.getElementById("oldPassword").value);
+        newpass = (String) (document.getElementById("newPassword").value);
+        conpass = (String) (document.getElementById("confirmPassword").value);
+    }
+    else{
+        return;
+    }
+
+    if (oldpass === "" || newpass === "" || conpass === ""){
+        alert("Empty field detected.");
+        return;
+    }
+    if(oldpass !== password){
+        alert("Old password entered is wrong.");
+        window.location.href = "changepassword.html";
+        return;
+    }
+    else if(oldpass === newpass){
+        alert("Old password and new password cannot be the same.");
+        window.location.href = "changepassword.html";
+        return;
+    }
+    else if (newpass !== conpass){
+        alert("New password and confirm password do not match.");
+        window.location.href = "changepassword.html";
+        return;
+    }
+    else{
+        password = conpass;
+        window.location.href = "adminaccount.html";
+        return;
+    }
+}
+
+if (document.getElementById("output")!=null){
+    document.getElementById("output").innerHTML = password;
+}
+
+if (document.getElementById("toggleVisibilityOld")!=null){
+    document.getElementById('toggleVisibilityOld').addEventListener('click', function() {
+        toggleVisibility('oldPassword');
+    });
+}
+
+if (document.getElementById("toggleVisibilityNew")!=null){
+    document.getElementById('toggleVisibilityNew').addEventListener('click', function() {
+        toggleVisibility('newPassword');
+    });
+}
+
+if (document.getElementById("toggleVisibilityConfirm")!=null){
+    document.getElementById('toggleVisibilityConfirm').addEventListener('click', function() {
+        toggleVisibility('confirmPassword');
+    });
+}
+
+function toggleVisibility(inputId) {
+    var inputField = document.getElementById(inputId);
+
+    if (inputField.type === 'password') {
+      inputField.type = 'text';
+      if (document.getElementById('toggleVisibility' + inputId.charAt(0).toUpperCase() + inputId.slice(1))!=null){
+        document.getElementById('toggleVisibility' + inputId.charAt(0).toUpperCase() + inputId.slice(1)).textContent = 'Hide';
+      }
+    } else {
+      inputField.type = 'password';
+      if (document.getElementById('toggleVisibility' + inputId.charAt(0).toUpperCase() + inputId.slice(1))!=null){
+        document.getElementById('toggleVisibility' + inputId.charAt(0).toUpperCase() + inputId.slice(1)).textContent = 'Show';
+      }
+    }
 }
