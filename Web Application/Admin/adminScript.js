@@ -1,54 +1,3 @@
-const orgList0 = new Array("Hope","0123450","hope@gmail.com");
-const orgList1 = new Array("Light","0123451","light@gmail.com");
-const orgList2 = new Array("Future","0123452","future@gmail.com");
-
-const donList0 = new Array("Ahmed Mohamed","0123460","ahmed@gmail.com");
-const donList1 = new Array("Ali Mohamed","0123461","ali@gmail.com");
-const donList2 = new Array("Karim Mohamed","0123462","karim@gmail.com");
-
-const orgSubmissions0 = new Array(orgList1, "Document1", "Document2");
-const orgSubmissions1 = new Array(orgList2, "Document1", "Document2");
-
-const donSubmissions0 = new Array(donList1, "Document1", "Document2");
-const donSubmissions1 = new Array(donList2, "Document1", "Document2");
-
-
-const orgList = {orgList0,orgList1,orgList2};
-const donList = {donList0,donList1,donList2};
-const orgSubmissions = {orgSubmissions0,orgSubmissions1};
-const donSubmissions = {donSubmissions0,donSubmissions1};
-const orgRequests = {orgList1,orgList2};
-const donRequests = {donList1,donList2};
-const regOrg = {orgList0};
-
-function orgListDisplay() {
-    
-}
-
-function donListDisplay() {
-    
-}
-
-function orgSubmissionsDisplay() {
-    
-}
-
-function donSubmissionsDisplay() {
-    
-}
-
-function orgRequestsDisplay() {
-    
-}
-
-function donRequestsDisplay() {
-    
-}
-
-function regOrgDisplay() {
-    
-}
-
 var dropdownElement; // Variable to store the reference to the dropdown
 var tabButton; //takes event
 var n;
@@ -88,24 +37,18 @@ function handleClick(event) {
     ul.style.left = left + 'px';
 
     if (n==1){
-        // Define the URLs for the dropdown items
-        var urls = ["orglist.html", "donlist.html"]; // Example URLs
+        var urls = ["orglist.html", "donlist.html"];
 
-        // Create li elements and anchor elements
         var actions = ["Organizations List", "Donors List"];
     }
     else if (n==2){
-        // Define the URLs for the dropdown items
-        var urls = ["orgsubmissions.html", "donsubmissions.html"]; // Example URLs
+        var urls = ["orgsubmissions.html", "donsubmissions.html"];
 
-        // Create li elements and anchor elements
         var actions = ["Organizations' Submissions", "Donors' Submissions"];
     }
     else{
-        // Define the URLs for the dropdown items
-        var urls = ["orgrequests.html", "donrequests.html"]; // Example URLs
+        var urls = ["orgrequests.html", "donrequests.html"];
 
-        // Create li elements and anchor elements
         var actions = ["Organizations' Requests", "Donors' Requests"];
     }
 
@@ -159,10 +102,6 @@ function orgRegistered() {
     window.location.href = "orgreg.html";
 }
 
-function loginRedirect() {
-    window.location.href = "Web Application/login.html";
-}
-
-function registerRedirect() {
-    window.location.href = "Web Application/register.html";
+function account() {
+    window.location.href = "adminaccount.html";
 }
