@@ -142,7 +142,7 @@ function unHideTable()
     }
   if(element.value.localeCompare("Gender")==0)
     {
-      let arr = ["none","male","female","uni"];
+      let arr = ["none","male","female","unisex"];
       fillDropDown(arr,"valuesDropDown");
     }
   if(element.value.localeCompare("Season")==0)
