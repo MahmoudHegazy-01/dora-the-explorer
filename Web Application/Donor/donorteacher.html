@@ -16,6 +16,8 @@
           <input type="text" class="form-control" id="datepicker" placeholder="Select date">
         </div>
       </div>
+
+      
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -40,8 +42,45 @@
       <button type="submit" class="btn btn-primary">Upload</button>
     </form>
   </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+            <label for="subjects">Subjects:</label>
+            <input type="text" class="form-control" id="subjects" placeholder="Enter subjects separated by commas">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+            <label for="subjects">Pro-bono classes:</label>
+            <input type="text" class="form-control" id="probonoclasses" placeholder="Enter the number of pro-bono classes I can teach">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+            <label for="subjects">Students</label>
+            <input type="text" class="form-control" id="probonoclasses" placeholder="Enter the number of students you can give private tutoring to">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- Custom JS -->
-<script src="script.js">
+<script>
 // script.js
 $(document).ready(function() {
       $('#uploadForm').submit(function(e) {
@@ -66,8 +105,27 @@ $(document).ready(function() {
       });
     });
 </script>
+<script>
+  $(document).ready(function() {
+    $('#namesSubjectsForm').submit(function(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Get values from inputs
+      var names = $('#names').val().split(',');
+      var subjects = $('#subjects').val().split(',');
+
+      // Display entered names and subjects
+      console.log("Names:", names);
+      console.log("Subjects:", subjects);
+
+      // Clear form inputs
+      $('#names').val('');
+      $('#subjects').val('');
+    });
+  });
+</script>
     
-    
+<script src="script.js"></script> 
 </body>
 </html>
         
