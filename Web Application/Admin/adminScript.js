@@ -105,3 +105,22 @@ function orgRegistered() {
 function account() {
     window.location.href = "adminaccount.html";
 }
+
+function donlist() {
+    window.location.href = "donlist.html";
+}
+function orglist() {
+    window.location.href = "orglist.html";
+}
+function donreq() {
+    window.location.href = "donrequests.html";
+}
+function orgreq() {
+    window.location.href = "orgrequests.html";
+}
+function donsub() {
+    window.location.href = "donsubmissions.html";
+}
+function orgsub() {
+    window.location.href = "orgsubmissions.html";
+}
