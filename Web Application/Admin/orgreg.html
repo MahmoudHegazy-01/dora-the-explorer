@@ -74,45 +74,82 @@
       </header>
     </header>
     <div class="bd-example m-0 border-0">
-    
-        <table class="table" id="dataTable">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Organization Name</th>
-              <th scope="col">Address</th>
-              <th scope="col">Mobile Number</th>
-              <th scope="col">Email</th>
-              <th scope="col">Submitted Files Drive Link</th>
-            </tr>
-          </thead>
-          <tbody class="table-group-divider">
-            <tr>
-              <th scope="row">1</th>
-              <td>Heart</td>
-              <td>22 EL-Daher St., Cairo</td>
-              <td>01234563</td>
-              <td>heart@gmail.com</td>
-              <td>https://drive.google.com/drive/folders/www</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>New Life</td>
-                <td>55 Orabi St., Cairo</td>
-                <td>01234562</td>
-                <td>newlife@gmail.com</td>
-                <td>https://drive.google.com/drive/folders/vvv</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Better Future</td>
-                <td>20 Morad St., Giza</td>
-                <td>01234561</td>
-                <td>betterfuture@gmail.com</td>
-                <td>https://drive.google.com/drive/folders/uuu</td>
-            </tr>
-          </tbody>
-        </table>
+      <form class="row g-3" role="search">
+        <div class="col-lg-3">
+            <select class="form-select" id="areaFilter">
+                <option value="">All Areas</option>
+                <option value="EL-Daher">EL-Daher</option>
+                <option value="Agouza">Agouza</option>
+                <option value="El Mohandeseen">El Mohandeseen</option>
+            </select>
+        </div>
+        <div class="col-lg-3">
+            <select class="form-select" id="governorateFilter">
+                <option value="">All Governorates</option>
+                <option value="Cairo">Cairo</option>
+                <option value="Giza">Giza</option>
+            </select>
+        </div>
+        <div class="col-lg-3">
+            <select class="form-select" id="typeFilter">
+                <option value="">All Organization Types</option>
+                <option value="Hospital">Hospital</option>
+                <option value="Orphanage">Orphanage</option>
+                <option value="School">School</option>
+            </select>
+        </div>
+      </form>
+      
+      <table class="table" id="dataTable">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Organization Name</th>
+            <th scope="col">Organization Type</th>
+            <th scope="col">Address</th>
+            <th scope="col">Area</th>
+            <th scope="col">Governorate</th>
+            <th scope="col">Mobile Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Submitted Files Drive Link</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <th scope="row">1</th>
+            <td>Heart</td>
+            <td>Hospital</td>
+            <td>22 EL-Daher St.</td>
+            <td>EL-Daher</td>
+            <td>Cairo</td>
+            <td>01234563</td>
+            <td>heart@gmail.com</td>
+            <td>https://drive.google.com/drive/folders/www</td>
+          </tr>
+          <tr>
+              <th scope="row">2</th>
+              <td>New Life</td>
+              <td>Orphanage</td>
+              <td>55 Ahmed Oraby St.</td>
+              <td>Agouza</td>
+              <td>Giza</td>
+              <td>01234562</td>
+              <td>newlife@gmail.com</td>
+              <td>https://drive.google.com/drive/folders/vvv</td>
+          </tr>
+          <tr>
+              <th scope="row">3</th>
+              <td>Better Future</td>
+              <td>School</td>
+              <td>20 Syria St.</td>
+              <td>El Mohandeseen</td>
+              <td>Giza</td>
+              <td>01234561</td>
+              <td>betterfuture@gmail.com</td>
+              <td>https://drive.google.com/drive/folders/uuu</td>
+          </tr>
+        </tbody>
+      </table>
         
     </div>
     <script src="adminScript.js"></script>

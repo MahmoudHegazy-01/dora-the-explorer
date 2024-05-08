@@ -229,3 +229,47 @@ function performSearch() {
 if (document.getElementById("searchInput")!=null){
     document.getElementById("searchInput").addEventListener("input", performSearch);
 }
+
+
+function filterTable() {
+    var areaFilter = document.getElementById("areaFilter").value.toUpperCase();
+    var governorateFilter = document.getElementById("governorateFilter").value.toUpperCase();
+    var typeFilter = document.getElementById("typeFilter").value.toUpperCase();
+    var table = document.getElementById("dataTable");
+    var rows = table.getElementsByTagName("tr");
+
+    for (var i = 1; i < rows.length; i++) { // Start from index 1 to skip header row
+        var cells = rows[i].getElementsByTagName("td");
+        var showRow = true;
+
+        // Check if any filter criteria is matched
+        for (var j = 0; j < cells.length; j++) {
+            var cellValue = cells[j].textContent.toUpperCase();
+            if ((areaFilter === "" || cellValue.includes(areaFilter)) &&
+                (governorateFilter === "" || cellValue.includes(governorateFilter)) &&
+                (typeFilter === "" || cellValue.includes(typeFilter))) {
+                // Show the row if it matches all filter criteria
+                rows[i].style.display = "";
+                showRow = true;
+                break;
+            } else {
+                // Hide the row if it doesn't match any filter criteria
+                showRow = false;
+            }
+        }
+
+        if (!showRow) {
+            rows[i].style.display = "none";
+        }
+    }
+}
+
+if (document.getElementById("areaFilter")!=null){
+    document.getElementById("areaFilter").addEventListener("change", filterTable);
+}
+if (document.getElementById("governorateFilter")!=null){
+    document.getElementById("governorateFilter").addEventListener("change", filterTable);
+}
+if (document.getElementById("typeFilter")!=null){
+    document.getElementById("typeFilter").addEventListener("change", filterTable);
+}
