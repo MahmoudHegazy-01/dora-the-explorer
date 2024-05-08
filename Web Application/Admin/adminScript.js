@@ -206,3 +206,26 @@ function toggleVisibility(inputId) {
       }
     }
 }
+
+function performSearch() {
+    var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+    var table = document.getElementById("dataTable");
+    var rows = table.getElementsByTagName("tr");
+
+    for (var i = 1; i < rows.length; i++) { // Start from index 1 to skip header row
+        var cells = rows[i].getElementsByTagName("td"); // Get cells (td) in each row
+        var found = false;
+        for (var j = 0; j < cells.length; j++) {
+            var cellText = cells[j].textContent.toLowerCase(); // Get text content of the cell
+            if (cellText.includes(searchTerm)) {
+                found = true;
+                break;
+            }
+        }
+        rows[i].style.display = found ? "" : "none"; // Show or hide row based on search result
+    }
+}
+
+if (document.getElementById("searchInput")!=null){
+    document.getElementById("searchInput").addEventListener("input", performSearch);
+}
