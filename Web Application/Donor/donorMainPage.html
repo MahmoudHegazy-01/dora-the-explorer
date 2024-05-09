@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DONOR</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/Web Application/MainStyleSheet.css" />
+    </head>
+    <body>
+<!-- Nav Bar -->
+      <header>
+        <div class="px-3 py-2 text-bg-dark border-bottom">
+          <div class="container">
+            <div
+              class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+            >
+              <a
+                href="/"
+                class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
+              >
+                <svg
+                  class="bi me-2"
+                  width="40"
+                  height="32"
+                  role="img"
+                  aria-label="Bootstrap"
+                >
+                  <use xlink:href="#bootstrap"></use>
+                </svg>
+              </a>
+
+              <ul
+                class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
+              >
+                <li>
+                  <a href="#" class="nav-link text-secondary" onClick="home()">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                      <use xlink:href="#home"></use>
+                    </svg>
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="nav-link text-white"
+                    onClick="assignNumber1();handleClick(event);"
+                  >
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                      <use xlink:href="#speedometer2"></use>
+                    </svg>
+                    Lists
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="nav-link text-white"
+                    onClick="assignNumber2();handleClick(event);"
+                  >
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                      <use xlink:href="#table"></use>
+                    </svg>
+                    Submissions
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="nav-link text-white"
+                    onClick="assignNumber3();handleClick(event);"
+                  >
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                      <use xlink:href="#grid"></use>
+                    </svg>
+                    Requests
+                  </a>
+                </li>
+                <li>
+                  <li  class="nav-item dropdown">
+                    <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                        <use xlink:href="#grid"></use>
+                      </svg>
+                      Profile
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">Settings</a></li>
+                      <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
+                    </ul>
+                  </li>
+                    
+                  
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+<!-- Nav Bar End -->
+          <!--Search-->
+          <header class="py-3 mb-4 border-bottom">
+            <div  class="container d-flex flex-wrap justify-content-center" >
+              <form class="col-12 col-lg-auto mb-3 mb-lg-0" >
+                <input id="myInput" type="search" class="form-control" onkeyup="searchFunction1()"  placeholder="Search..." aria-label="Search">
+              </form>
+              <select id = "categoryDropDown" onchange="fillFilter(value)">
+                <option value = "None">Categories</option>
+                <option value = "Toys">Toys</option>
+                <option value = "Clothes">Clothes</option>
+                <option value = "School">School Supplies</option>
+                <option value = "Medical">Medical Supplies</option>
+                <option value = "Blood">Blood Donations</option>
+                <option value = "Food">Food</option>
+                <option value = "Teaching">Teaching</option>
+                <option value = "Medical Cases">Patient Cases</option>
+              </select>
+              <select id="filterDropDown" onchange="fillValues()">
+                <option>Filter</option>
+            </select>
+              <!--Values dropdown so that I can filter based on the value (ex: age = 2-4,...)-->
+              <select id="valuesDropDown" style="display: none" onchange="searchUsingValues()">
+                <option>Values</option>
+            </select>
+            </div>
+            
+          </header>
+          <!--Request Table-->
+          <table id="myTable">
+            <tr class="header">
+              <th style="width:23%;">Organization Name</th>
+              <th style="width:22%;">Category</th>
+              <th style="width:23%">Filter</th>
+              <th style="width:22%">Items</th>
+              
+            </tr>
+            <tr>
+              <td>Charity 1</td>
+              <td>Toys</td>
+              <td>6-8 years, unisex, board games</td>
+              <td>Lego</td>
+              <td><a href="toyDonation.html">View Details </a></td>
+            </tr>
+            <tr>
+              <td>Charity 2</td>
+              <td>School Supplies</td>
+              <td>Fiction</td>
+              <td>Wizard of Oz</td>
+              <td><a href="bookDonation.html">View Details </a></td>
+            </tr>
+            <tr>
+              <td>Island Trading</td>
+              <td>Clothes</td>
+              <td>9-11 years, male, winter</td>
+              <td>Jacket</td>
+              <td><a href="clothingDonation.html">View Details </a></td>
+            </tr>
+            <tr>
+              <td>Hello world</td>
+              <td>School supplies</td>
+              <td>Stationary items</td>
+              <td>Pencils</td>
+              <td><a href="stationaryDonation.html">View Details </a></td>
+            </tr>
+            <tr>
+              <td>Food Charity</td>
+              <td>Food</td>
+              <td>Fruits</td>
+              <td>Apple</td>
+              <td><a href="foodDonation.html">View Details </a></td>
+            </tr>
+            <tr>
+              <td>Medical Charity</td>
+              <td>Medical supplies</td>
+              <td>Medical Devices</td>
+              <td>Xray</td>
+              <td><a href="medicalDonation.html">View Details </a></td>
+            </tr>
+            <tr>
+              <td>Blood Charity</td>
+              <td>Blood Donations</td>
+              <td>Cairo , Ain Shams</td>
+              <td>Blood type : O-</td>
+              <td><a href="bloodDonation.html">View Details </a></td>
+            </tr>
+            <tr>
+              <td>Education Charity</td>
+              <td>Teaching</td>
+              <td>Chemistry , Cairo, Nasr City</td>
+              <td>A level Chemistry</td>
+              <td><a href="teachingProBonoDonor.html">View Details </a></td>
+            </tr>
+            <tr>
+              <td>Dar el Fouad</td>
+              <td>Patient Cases</td>
+              <td>Eyes,Giza,6th of Ocotber</td>
+              <td>Heart checkup</td>
+              <td><a href="medicalCaseProBonoDonor.html">View Details </a></td>
+            </tr>
+
+          </table>
+
+          <!--Pagination-->
+          <nav aria-label="...">
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item active" aria-current="page">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+          <!--END-->
+          <script src="script.js"></script>
+          <script src = "donorMainPageScript.js"></script>
+          <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+          ></script>
+      </body>
+</html>

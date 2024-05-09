@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DONOR</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/Web Application/MainStyleSheet.css" />
+    </head>
+    <body>
+        <!--Nav Bar-->
+        <header>
+            <div class="px-3 py-2 text-bg-dark border-bottom">
+              <div class="container">
+                <div
+                  class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+                >
+                  <a
+                    href="/"
+                    class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
+                  >
+                    <svg
+                      class="bi me-2"
+                      width="40"
+                      height="32"
+                      role="img"
+                      aria-label="Bootstrap"
+                    >
+                      <use xlink:href="#bootstrap"></use>
+                    </svg>
+                  </a>
+    
+                  <ul
+                    class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
+                  >
+                    <li>
+                      <a href="#" class="nav-link text-secondary" onClick="home()">
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                          <use xlink:href="#home"></use>
+                        </svg>
+                        Home
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="nav-link text-white"
+                        onClick="assignNumber1();handleClick(event);"
+                      >
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                          <use xlink:href="#speedometer2"></use>
+                        </svg>
+                        Lists
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="nav-link text-white"
+                        onClick="assignNumber2();handleClick(event);"
+                      >
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                          <use xlink:href="#table"></use>
+                        </svg>
+                        Submissions
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="nav-link text-white"
+                        onClick="assignNumber3();handleClick(event);"
+                      >
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                          <use xlink:href="#grid"></use>
+                        </svg>
+                        Requests
+                      </a>
+                    </li>
+                    <li>
+                      <li  class="nav-item dropdown">
+                        <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                          <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                            <use xlink:href="#grid"></use>
+                          </svg>
+                          Profile
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li><a class="dropdown-item" href="#">Settings</a></li>
+                          <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
+                        </ul>
+                      </li>
+                        
+                      
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </header>
+          <!-- GO back button-->
+         <a href="donorMainPage.html"><button>Go Back</button> </a>
+         <!--Donation Details-->
+         <p>
+            <ul >
+                <li style="padding-bottom: 1%;">
+                    Name of Patient : Kate
+                </li>
+                <li style="padding-bottom: 1%;">
+                    Blood type : O-
+                </li>
+                <li style="padding-bottom: 1%;"> 
+                    Hospital Name : Dar el Fouad Hospital
+                </li>
+                <li style="padding-bottom: 1%;">
+                    Area : Ain shams
+                </li>
+                <li style="padding-bottom: 1%;">
+                    Governorate : Cairo
+                </li>
+                <li style="padding-bottom: 1%;">
+                    Address : Ain shams Sharkeya
+                </li>
+            </ul>
+          </p>
+          <!-- Quantity Selection-->
+          <br>
+          <button id="Donate" onclick="checkDonation()">
+            Donate
+          </button>
+
+           <!--END-->
+           <script src="script.js"></script>
+           <script src = "donorMainPageScript.js"></script>
+           <script
+             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+             crossorigin="anonymous"
+           ></script>
+    </body>
+    </html>

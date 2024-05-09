@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Information</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap-datepicker CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="form-group">
+          <label for="datepicker">Select date where you are available to offer you'r services:</label>
+          <input type="text" class="form-control" id="datepicker" placeholder="Select date">
+        </div>
+      </div>
+
+      
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Bootstrap-datepicker JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $('#datepicker').datepicker({
+        format: 'yyyy-mm-dd', // Format date as desired
+        autoclose: true
+      });
+    });
+  </script>
+  <div class="container mt-5">
+    <h1>Upload Documents of qualifications</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="fileInput">Select File:</label>
+        <input type="file" class="form-control-file" id="fileInput" name="file">
+      </div>
+      <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+            <label for="subjects">Subjects:</label>
+            <input type="text" class="form-control" id="subjects" placeholder="Enter subjects separated by commas">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+            <label for="subjects">Pro-bono classes:</label>
+            <input type="text" class="form-control" id="probonoclasses" placeholder="Enter the number of pro-bono classes I can teach">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+            <label for="subjects">Students</label>
+            <input type="text" class="form-control" id="probonoclasses" placeholder="Enter the number of students you can give private tutoring to">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JS -->
+<script>
+// script.js
+$(document).ready(function() {
+      $('#uploadForm').submit(function(e) {
+        e.preventDefault(); // Prevent the form from submitting normally
+    
+        var formData = new FormData(this); // Create a FormData object from the form
+        $.ajax({
+          url: 'upload.php', // Specify the URL to handle the file upload
+          type: 'POST',
+          data: formData,
+          contentType: false, // Don't set content type
+          processData: false, // Don't process the data
+          success: function(response) {
+            // Handle success response
+            console.log('Upload successful:', response);
+          },
+          error: function(xhr, status, error) {
+            // Handle error response
+            console.error('Upload error:', error);
+          }
+        });
+      });
+    });
+</script>
+<script>
+  $(document).ready(function() {
+    $('#namesSubjectsForm').submit(function(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Get values from inputs
+      var names = $('#names').val().split(',');
+      var subjects = $('#subjects').val().split(',');
+
+      // Display entered names and subjects
+      console.log("Names:", names);
+      console.log("Subjects:", subjects);
+
+      // Clear form inputs
+      $('#names').val('');
+      $('#subjects').val('');
+    });
+  });
+</script>
+    
+<script src="script.js"></script> 
+</body>
+</html>
+        
