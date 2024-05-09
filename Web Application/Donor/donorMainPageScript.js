@@ -162,7 +162,7 @@ function unHideTable()
     }  
   if(element.value.localeCompare("Area")==0)
   {
-    let arr = ["none","Fifth Settlement","Maadi","Nasr City","Madinaty","Rehab","6th of October","Sheikh Zayed"];
+    let arr = ["none","Fifth Settlement","Maadi","Nasr City","Madinaty","Rehab","6th of October","Sheikh Zayed","Ain Shams"];
      fillDropDown(arr,"valuesDropDown");
   }
   if(element.value.localeCompare("Governorate")==0)
