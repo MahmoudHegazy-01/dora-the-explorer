@@ -273,3 +273,15 @@ if (document.getElementById("governorateFilter")!=null){
 if (document.getElementById("typeFilter")!=null){
     document.getElementById("typeFilter").addEventListener("change", filterTable);
 }
+
+function accept(button) {
+    var row = button.closest("tr");
+    row.remove();
+    alert("Accepted!");
+  }
+
+  function reject(button) {
+    var row = button.closest("tr");
+    row.remove();
+    alert("Rejected!");
+  }
