@@ -126,14 +126,14 @@
     <!-- Create a donation post-->
     <div class="donationPost">
       <div class="col-md-6 offset-md-3 mt-5">
-        <label for="Category">Category: </label>
+        <label for="Category">Donation Type: </label>
         <select
           class="form-select"
           id="selectCateory"
           aria-label="Default select example"
           onchange="checkDonation()"
         >
-          <option selected>Categories</option>
+          <option selected>Donation Type</option>
           <option value="Toys">Toys</option>
           <option value="Clothes">Clothes</option>
           <option value="Food">Food</option>
@@ -144,66 +144,98 @@
       </div>
     </div>
 
-    <div id="commonDonations" style="display: none">
+    <div id="commonDonations" class="container-fluid" style="display: none">
       <div id="DonoInformation">
-        Category:
+        Donation Type:
         <mark><label id="selectedCategory"></label></mark>
         <br />
         <br />
-        Donation Name:
-        <input id="DonationName" type="text" />
-        <br />
-        <br />
       </div>
     </div>
-    <div id="Toys" style="display: none">
+
+    <!--toys-->
+
+    <div id="Toys" class="container-fluid" style="display: none">
       <div id="ToysInformation">
-        Age Group:
+        Type:
         <input type="text" />
+        Category:
+        <input id="DonationName" type="text" />
+
+        Age:
+        <input type="number" />
         Gender:
         <input type="text" />
+        <br />
+        <br />
         Quantity:
-        <input type="number" />
-        <div class="container mt-5">
-          <h1>Upload Documents of qualifications</h1>
-          <form id="uploadForm" enctype="multipart/form-data">
-            <div class="form-group">
-              <label for="fileInput">Select File:</label>
-              <input
-                type="file"
-                class="form-control-file"
-                id="fileInput"
-                name="file"
-              />
-            </div>
-            <button type="submit" class="btn btn-primary">Upload</button>
-          </form>
-        </div>
+        <input id="toysQuantity" type="number" />
         <br />
         <br />
-        <a class="btn btn-primary" onclick="addToys()" role="button">Submit</a>
-      </div>
-    </div>
-    <div id="Clothes" style="display: none">
-      <div id="ClothesInformation">
-        Age Group:
-        <input type="text" />
-        Gender:
-        <input type="text" />
-        Quantity:
-        <input type="number" />
+        <label for="fileInput">Picture:</label>
+        <input
+          type="file"
+          class="form-control-file"
+          id="fileInput"
+          name="file"
+        />
         <br />
         <br />
+
         <a class="btn btn-primary" onclick="addToys()" role="button">Submit</a>
       </div>
     </div>
 
-    <table id="myTable">
+    <!--clothes-->
+
+    <div id="Clothes" class="container-fluid" style="display: none">
+      <div id="ClothesInformation">
+        Type of Clothing:
+        <input id="clothType" type="text" />
+        Age:
+        <input type="number" />
+        Gender:
+        <input type="text" />
+        Season:
+        <input type="text" />
+        <br />
+        <br />
+        Material:
+        <input type="text" />
+
+        Quantity:
+        <input id="clotheQuantity" type="number" />
+        <br />
+        <br />
+        <a class="btn btn-primary" onclick="addClothes()" role="button"
+          >Submit</a
+        >
+      </div>
+    </div>
+    <!--food-->
+
+    <div id="Food" class="container-fluid" style="display: none">
+      <div id="FoodInformation">
+        Food Name:
+        <input id="foodType" type="text" />
+        <br />
+        <br />
+        Quantity:
+        <input id="FoodQuantity" type="number" />
+        <input id="foodUnit" placeholder="Unit" type="text" />
+        <br />
+        <br />
+        <a class="btn btn-primary" onclick="addFood()" role="button">Submit</a>
+      </div>
+    </div>
+
+    <table class="container-fluid" id="myTable">
       <tr class="header">
         <th style="width: 23%">Donation Name</th>
-        <th style="width: 22%">Category</th>
+        <th style="width: 22%">Donation Type</th>
         <th style="width: 23%">Status</th>
-        <th style="width: 22%">Items</th>
+        <th style="width: 22%">Quantity</th>
+        <th style="width: 23%"></th>
       </tr>
     </table>
     <!--End of donation post -->
