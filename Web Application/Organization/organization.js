@@ -20,11 +20,14 @@ function addDonation() {
 
 function checkDonation() {
   var selectedValue = document.getElementById("selectCateory").value;
+  var c = document.getElementById("collapseExample");
   if (selectedValue === "1") {
     console.log("1");
+    c.style.display = "block";
   }
   if (selectedValue === "2") {
     console.log("2");
+    c.style.display = "none";
   }
   if (selectedValue === "3") {
     console.log("3");
