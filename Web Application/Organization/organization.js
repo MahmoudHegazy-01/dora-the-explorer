@@ -17,3 +17,25 @@ function addDonation() {
   cell3.innerHTML = "2-4 years";
   cell4.innerHTML = "Lego";
 }
+
+function checkDonation() {
+  var selectedValue = document.getElementById("selectCateory").value;
+  if (selectedValue === "1") {
+    console.log("1");
+  }
+  if (selectedValue === "2") {
+    console.log("2");
+  }
+  if (selectedValue === "3") {
+    console.log("3");
+  }
+  if (selectedValue === "4") {
+    console.log("4");
+  }
+  if (selectedValue === "5") {
+    console.log("5");
+  }
+  if (selectedValue === "6") {
+    console.log("6");
+  }
+}
