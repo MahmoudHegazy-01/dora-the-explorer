@@ -31,6 +31,7 @@ function checkDonation() {
   }
   if (selectedValue === "3") {
     console.log("3");
+    window.location.href = "organization.html";
   }
   if (selectedValue === "4") {
     console.log("4");
