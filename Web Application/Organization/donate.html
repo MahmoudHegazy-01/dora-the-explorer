@@ -121,50 +121,31 @@
         </div>
       </div>
     </header>
-    <!-- Nav Bar End -->
-    <!-- Create Donation-->
-    <a class="btn btn-primary" href="donate.html" role="button"
-      >Add A Donation</a
-    >
-    <!-- Create Donation End-->
-    <!-- Donation Details-->
-    <table id="myTable">
-      <tr class="header">
-        <th style="width: 23%">Organization Name</th>
-        <th style="width: 22%">Category</th>
-        <th style="width: 23%">Filter</th>
-        <th style="width: 22%">Items</th>
-      </tr>
-      <tr>
-        <td>Charity 1</td>
-        <td>Toys</td>
-        <td>2-4 years, male, winter</td>
-        <td>Lego</td>
-        <td><a href="#">View Details </a></td>
-      </tr>
-      <tr>
-        <td>Charity 2</td>
-        <td>School Supplies</td>
-        <td>Books</td>
-        <td>Wizard of Oz</td>
-        <td><a href="#">View Details </a></td>
-      </tr>
-      <tr>
-        <td>Island Trading</td>
-        <td>Clothes</td>
-        <td>10-13 years, male, winter</td>
-        <td>Jacket,Pullover</td>
-        <td><a href="#">View Details </a></td>
-      </tr>
-      <tr>
-        <td>Hello world</td>
-        <td>School supplies</td>
-        <td>Stationary items</td>
-        <td>Pencils,Pens</td>
-        <td><a href="#">View Details </a></td>
-      </tr>
-    </table>
-    <!-- Donation Details End-->
+    <!-- Nav Bar End-->
+
+    <!-- Create a donation post-->
+    <div class="donationPost">
+      <div class="col-md-6 offset-md-3 mt-5">
+        <label for="Category">Category: </label>
+        <select
+          class="form-select"
+          id="selectCateory"
+          aria-label="Default select example"
+          onchange="checkDonation()"
+        >
+          <option selected>Categories</option>
+          <option value="1">Toys</option>
+          <option value="2">Clothes</option>
+          <option value="3">Food</option>
+          <option value="4">Medical Supplies</option>
+          <option value="5">School Supplies</option>
+          <option value="6">Blood Donations</option>
+        </select>
+      </div>
+    </div>
+
+    <!--End of donation post -->
+
     <script src="organization.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
