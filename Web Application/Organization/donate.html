@@ -134,24 +134,78 @@
           onchange="checkDonation()"
         >
           <option selected>Categories</option>
-          <option value="1">Toys</option>
-          <option value="2">Clothes</option>
-          <option value="3">Food</option>
-          <option value="4">Medical Supplies</option>
-          <option value="5">School Supplies</option>
-          <option value="6">Blood Donations</option>
+          <option value="Toys">Toys</option>
+          <option value="Clothes">Clothes</option>
+          <option value="Food">Food</option>
+          <option value="Medical Supplies">Medical Supplies</option>
+          <option value="School Supplies">School Supplies</option>
+          <option value="Blood Donations">Blood Donations</option>
         </select>
       </div>
     </div>
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body">
-        Some placeholder content for the collapse component. This panel is
-        hidden by default but revealed when the user activates the relevant
-        trigger.
+
+    <div id="commonDonations" style="display: none">
+      <div id="DonoInformation">
+        Category:
+        <mark><label id="selectedCategory"></label></mark>
+        <br />
+        <br />
+        Donation Name:
+        <input id="DonationName" type="text" />
+        <br />
+        <br />
       </div>
     </div>
-    <div id="commonDonations"></div>
+    <div id="Toys" style="display: none">
+      <div id="ToysInformation">
+        Age Group:
+        <input type="text" />
+        Gender:
+        <input type="text" />
+        Quantity:
+        <input type="number" />
+        <div class="container mt-5">
+          <h1>Upload Documents of qualifications</h1>
+          <form id="uploadForm" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="fileInput">Select File:</label>
+              <input
+                type="file"
+                class="form-control-file"
+                id="fileInput"
+                name="file"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+          </form>
+        </div>
+        <br />
+        <br />
+        <a class="btn btn-primary" onclick="addToys()" role="button">Submit</a>
+      </div>
+    </div>
+    <div id="Clothes" style="display: none">
+      <div id="ClothesInformation">
+        Age Group:
+        <input type="text" />
+        Gender:
+        <input type="text" />
+        Quantity:
+        <input type="number" />
+        <br />
+        <br />
+        <a class="btn btn-primary" onclick="addToys()" role="button">Submit</a>
+      </div>
+    </div>
 
+    <table id="myTable">
+      <tr class="header">
+        <th style="width: 23%">Donation Name</th>
+        <th style="width: 22%">Category</th>
+        <th style="width: 23%">Status</th>
+        <th style="width: 22%">Items</th>
+      </tr>
+    </table>
     <!--End of donation post -->
 
     <script src="organization.js"></script>
