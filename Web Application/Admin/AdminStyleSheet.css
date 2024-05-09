@@ -217,3 +217,17 @@ ul {
     border-radius: var(--mdb-card-border-radius);
     box-shadow: var(--mdb-card-box-shadow);
 }
+
+.name-container {
+    background-color: #7ce275;
+    padding: 10px; /* Add some padding for spacing */
+    border-radius: 5px; /* Add rounded corners */
+    margin-left: 20px; 
+  }
+
+  .white-container {
+    background-color: #ffffff; /* White background color */
+    padding: 10px; /* Add some padding for spacing */
+    border-radius: 5px; /* Add rounded corners */
+    margin-right: 20px;
+  }

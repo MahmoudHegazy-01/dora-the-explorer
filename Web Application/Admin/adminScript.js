@@ -280,8 +280,72 @@ function accept(button) {
     alert("Accepted!");
   }
 
-  function reject(button) {
+function reject(button) {
     var row = button.closest("tr");
     row.remove();
     alert("Rejected!");
-  }
+}
+
+function hope(){
+    window.location.href = "hope.html";
+}
+function light(){
+    window.location.href = "light.html";
+}
+function future(){
+    window.location.href = "future.html";
+}
+function youssef(){
+    window.location.href = "youssef.html";
+}
+function ahmed(){
+    window.location.href = "ahmed.html";
+}
+function asmaa(){
+    window.location.href = "asmaa.html";
+}
+
+
+// Initialize and add the map
+function initMap(n) {
+    // Specify the coordinates of the marker's location
+    var x;
+    var y;
+    if(n==0){
+        x=30.071020;
+        y=31.273279;
+    }
+    else if(n==1){
+        x=30.107510;
+        y=31.335880;
+    }
+    else if(n==2){
+        x=30.043660;
+        y=31.196090;
+    }
+    else if(n==3){
+        x=30.105420;
+        y=31.266090;
+    }
+    else if(n==4){
+        x=29.988330;
+        y=30.942220;
+    }
+    else if(n==5){
+        x=29.961380;
+        y=31.217200;
+    }
+    var location = { lat:  x, lng: y };
+
+    // Create a map object and specify the DOM element for display
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: location,
+        zoom: 15 // Adjust the zoom level as needed
+    });
+
+    // Create a marker and set its position
+    var marker = new google.maps.Marker({
+        position: location,
+        map: map
+    });
+}
