@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DONOR</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/Web Application/MainStyleSheet.css" />
+    </head>
+    <body>
+        <!--Nav Bar-->
+        <header>
+            <div class="px-3 py-2 text-bg-dark border-bottom">
+              <div class="container">
+                <div
+                  class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+                >
+                  <a
+                    href="/"
+                    class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
+                  >
+                    <svg
+                      class="bi me-2"
+                      width="40"
+                      height="32"
+                      role="img"
+                      aria-label="Bootstrap"
+                    >
+                      <use xlink:href="#bootstrap"></use>
+                    </svg>
+                  </a>
+    
+                  <ul
+                    class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
+                  >
+                    <li>
+                      <a href="#" class="nav-link text-secondary" onClick="home()">
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                          <use xlink:href="#home"></use>
+                        </svg>
+                        Home
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="nav-link text-white"
+                        onClick="assignNumber1();handleClick(event);"
+                      >
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                          <use xlink:href="#speedometer2"></use>
+                        </svg>
+                        Lists
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="nav-link text-white"
+                        onClick="assignNumber2();handleClick(event);"
+                      >
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                          <use xlink:href="#table"></use>
+                        </svg>
+                        Submissions
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="nav-link text-white"
+                        onClick="assignNumber3();handleClick(event);"
+                      >
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                          <use xlink:href="#grid"></use>
+                        </svg>
+                        Requests
+                      </a>
+                    </li>
+                    <li>
+                      <li  class="nav-item dropdown">
+                        <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                          <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                            <use xlink:href="#grid"></use>
+                          </svg>
+                          Profile
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li><a class="dropdown-item" href="#">Settings</a></li>
+                          <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
+                        </ul>
+                      </li>
+                        
+                      
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </header>
+          <!-- GO back button-->
+         <a href="donorMainPage.html"><button>Go Back To Home Page</button> </a>
+        <!--ETA-->
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donation Pickup ETA</title>
+  <style>
+    /* Add your CSS styles here */
+    .pickup-info {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Donation Pickup ETA</h2>
+
+  <div class="pickup-info">
+    
+    <h3>Your driver will arrive after <span id="eta" data-min="10" data-max="30">00</span> minutes</h3>
+<script>
+  // Get the minimum and maximum time from data attributes (in minutes)
+  const minTime = parseInt(document.getElementById("eta").dataset.min);
+  const maxTime = parseInt(document.getElementById("eta").dataset.max);
+
+  // Generate a random initial time within the range (in minutes)
+  let remainingTime = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
+
+  // Update the displayed time (with minutes)
+  document.getElementById("eta").textContent = remainingTime.toString().padStart(2, "0");
+
+  // Function to update the timer (decrements in minutes)
+  function updateTimer() {
+    remainingTime--;
+    document.getElementById("eta").textContent = remainingTime.toString().padStart(2, "0");
+
+    // Stop the timer and show alert when it reaches zero
+    if (remainingTime === 0) {
+      clearInterval(intervalId);
+      alert("Your driver has arrived!");
+    }
+  }
+
+  // Start the timer with an interval of 60 seconds (1 minute)
+  const intervalId = setInterval(updateTimer, 60000);
+</script>
+
+    <p>Your <span id="selectedTransport"></span> is scheduled to arrive in <span id="pickupTime"></span>. Please ensure you're available at the pickup location.</p>
+    <script>
+      // Get the selected transportation from localStorage
+      const selectedTransport = localStorage.getItem("selectedTransportation");
+    
+      // Display the selected transportation in the span element
+      document.getElementById("selectedTransport").textContent = selectedTransport;
+    </script>
+<script>
+  // Get the selected time from localStorage
+  const selectedTime = localStorage.getItem("selectedTime");
+
+  // Display the selected time in the span element
+  document.getElementById("pickupTime").textContent = selectedTime;
+</script>
+  </div>
+
+  <!-- Add more pickup info sections as needed -->
+  
+  <script>
+    // Generate random ETA between the min and max specified in data attributes
+    document.addEventListener("DOMContentLoaded", function() {
+      var etas = document.querySelectorAll('[contenteditable]');
+      etas.forEach(function(eta) {
+        var min = parseInt(eta.getAttribute('data-min'));
+        var max = parseInt(eta.getAttribute('data-max'));
+        var randomETA = Math.floor(Math.random() * (max - min + 1)) + min;
+        eta.textContent = randomETA < 10 ? "0" + randomETA : randomETA;
+      });
+    });
+  </script>
+</body>
+</html>
+
+           <!--END-->
+           <script src="script.js"></script>
+           <script src = "donorMainPageScript.js"></script>
+           <script
+             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+             crossorigin="anonymous"
+           ></script>
+    </body>
+    </html>
