@@ -286,6 +286,14 @@ function reject(button) {
     alert("Rejected!");
 }
 
+function accept() {
+    alert("Accepted!");
+  }
+
+function reject() {
+    alert("Rejected!");
+}
+
 function hope(){
     window.location.href = "hope.html";
 }
@@ -303,6 +311,15 @@ function ahmed(){
 }
 function asmaa(){
     window.location.href = "asmaa.html";
+}
+function heart(){
+    window.location.href = "heart.html";
+}
+function newlife(){
+    window.location.href = "newlife.html";
+}
+function betterfuture(){
+    window.location.href = "betterfuture.html";
 }
 
 
@@ -335,6 +352,18 @@ function initMap(n) {
         x=29.961380;
         y=31.217200;
     }
+    else if(n==6){
+        x=30.092560;
+        y=31.252320;
+    }
+    else if(n==7){
+        x=29.985540;
+        y=30.944830;
+    }
+    else if(n==8){
+        x=30.052530;
+        y=31.197450;
+    }
     var location = { lat:  x, lng: y };
 
     // Create a map object and specify the DOM element for display
@@ -348,4 +377,44 @@ function initMap(n) {
         position: location,
         map: map
     });
+}
+
+function downloadPdf() {
+    // Replace "path/to/your/file.pdf" with the actual path to your PDF file
+    var pdfUrl = "D:\MS2.pdf";
+    
+    // Create an anchor element
+    var a = document.createElement("a");
+    
+    // Set the href attribute to the PDF URL
+    a.href = pdfUrl;
+    
+    // Set the download attribute to force the file to be downloaded instead of opened
+    a.download = "MS2.pdf"; // You can specify the filename here
+    
+    // Append the anchor element to the document body
+    document.body.appendChild(a);
+    
+    // Trigger a click event on the anchor element
+    a.click();
+    
+    // Remove the anchor element from the document body
+    document.body.removeChild(a);
+}
+
+function deleteaccount(name){
+    alert("Account deleted!");
+    window.location.href = "orgreg.html";
+    hideRowsByName(name);
+}
+
+function hideRowsByName(name) {
+    var table = document.getElementById("dataTable");
+    var rows = table.getElementsByTagName("tr");
+    for (var i = 0; i < rows.length; i++) {
+        var cells = rows[i].getElementsByTagName("td");
+        if (cells.length > 1 && cells[1].innerText === name) { // Check if the second cell (index 1) matches the specified name (Organization Name)
+            rows[i].style.display = "none"; // Hide the row
+        }
+    }
 }
