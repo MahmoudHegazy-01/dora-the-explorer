@@ -286,14 +286,14 @@ if (document.getElementById("typeFilter")!=null){
 }
 
 function accept(button) {
-    var row = button.closest("tr");
-    row.remove();
+    var row = button.parentNode.parentNode;
+    row.parentNode.removeChild(row);
     alert("Accepted!");
   }
 
 function reject(button) {
-    var row = button.closest("tr");
-    row.remove();
+    var row = button.parentNode.parentNode;
+    row.parentNode.removeChild(row);
     alert("Rejected!");
 }
 
