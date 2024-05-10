@@ -12,6 +12,9 @@ function assignNumber2(){
 function assignNumber3(){
     n=3;
 }
+function assignNumber4(){
+    n=4;
+}
 
 function handleClick(event) {
     // Prevent the default behavior of the link
@@ -47,10 +50,15 @@ function handleClick(event) {
 
         var actions = ["Organizations' Submissions", "Donors' Submissions"];
     }
-    else{
+    else if (n==3){
         var urls = ["orgrequests.html", "donrequests.html"];
 
         var actions = ["Organizations' Requests", "Donors' Requests"];
+    }
+    else{
+        var urls = ["orgreg.html", "donreg.html"];
+
+        var actions = ["Registered Organization", "Registered Donors"];
     }
 
     actions.forEach(function(actionText, index) {
@@ -101,6 +109,9 @@ function home() {
 
 function orgRegistered() {
     window.location.href = "orgreg.html";
+}
+function donRegistered() {
+    window.location.href = "donreg.html";
 }
 
 function account() {
@@ -321,6 +332,15 @@ function newlife(){
 function betterfuture(){
     window.location.href = "betterfuture.html";
 }
+function nabil(){
+    window.location.href = "nabil.html";
+}
+function belal(){
+    window.location.href = "belal.html";
+}
+function farah(){
+    window.location.href = "farah.html";
+}
 
 
 // Initialize and add the map
@@ -364,6 +384,18 @@ function initMap(n) {
         x=30.052530;
         y=31.197450;
     }
+    else if(n==9){
+        x=30.032840;
+        y=31.199160;
+    }
+    else if(n==10){
+        x=30.065780;
+        y=31.383450;
+    }
+    else if(n==11){
+        x=29.981830;
+        y=31.254200;
+    }
     var location = { lat:  x, lng: y };
 
     // Create a map object and specify the DOM element for display
@@ -402,9 +434,15 @@ function downloadPdf() {
     document.body.removeChild(a);
 }
 
-function deleteaccount(name){
+function deleteorgaccount(name){
     alert("Account deleted!");
     window.location.href = "orgreg.html";
+    hideRowsByName(name);
+}
+
+function deletedonaccount(name){
+    alert("Account deleted!");
+    window.location.href = "donreg.html";
     hideRowsByName(name);
 }
 
