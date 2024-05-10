@@ -131,7 +131,7 @@
           class="form-select"
           id="selectCateory"
           aria-label="Default select example"
-          onchange="checkDonation()"
+          onchange="checkDonation2()"
         >
           <option selected>Donation Type</option>
           <option value="Toys">Toys</option>
@@ -229,6 +229,69 @@
       </div>
     </div>
 
+    <!--Medical Supplies-->
+    <div id="Medical Supplies" class="container-fluid" style="display: none">
+      <div id="SuppliesInformation">
+        Device Type:
+        <input id="SuppliesType" type="text" />
+        Use:
+        <input type="text" />
+        <br />
+        <br />
+        Quantity:
+        <input id="SuppliesQuantity" type="number" />
+        <br />
+        <br />
+        <label for="fileInput">Picture:</label>
+        <input
+          type="file"
+          class="form-control-file"
+          id="fileInput"
+          name="file"
+        />
+        <br />
+        <br />
+
+        <a class="btn btn-primary" onclick="addSupplies()" role="button"
+          >Submit</a
+        >
+      </div>
+    </div>
+
+    <!--School Supplies-->
+    <div id="School" class="container-fluid" style="display: none">
+      <div id="SchoolInformation">
+        Stationary Type:
+        <input id="SchoolType" type="text" />
+
+        Quantity:
+        <input id="SchoolQuantity" type="number" />
+
+        <br />
+        <br />
+        <a class="btn btn-primary" onclick="addSchool()" role="button"
+          >Submit</a
+        >
+      </div>
+    </div>
+
+    <!--Blood Donations-->
+    <div id="Blood Donations" class="container-fluid" style="display: none">
+      <div id="BloodInformation">
+        Patient Name:
+        <input type="text" />
+        Blood Type:
+        <input id="BloodType" type="text" />
+
+        Quantity:
+        <input id="BloodQuantity" type="number" />
+
+        <br />
+        <br />
+        <a class="btn btn-primary" onclick="addBlood()" role="button">Submit</a>
+      </div>
+    </div>
+
     <table class="container-fluid" id="myTable">
       <tr class="header">
         <th style="width: 23%">Donation Name</th>
@@ -236,6 +299,15 @@
         <th style="width: 23%">Status</th>
         <th style="width: 22%">Quantity</th>
         <th style="width: 23%"></th>
+      </tr>
+      <tr id="done">
+        <td>Dolls</td>
+        <td>Toys</td>
+        <td>
+          <a href="/Web Application/Organization/Fullfilled.html">Fulfilled</a>
+        </td>
+        <td>30</td>
+        <td><a class="btn btn-primary" onclick=" remDone()">Delete</a></td>
       </tr>
     </table>
     <!--End of donation post -->
