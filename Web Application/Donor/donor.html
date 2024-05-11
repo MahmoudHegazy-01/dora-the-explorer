@@ -17,39 +17,6 @@
   <body>
     <!-- Bootstrap JS -->
 
-    <body class="d-flex align-items-center py-4 bg-body-tertiary vsc-initialized">
-     
-  
-      <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)" fdprocessedid="aag7py">
-          <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-          <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-          <li>
-            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
-              <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-              Light
-              <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-            </button>
-          </li>
-          <li>
-            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-              <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-              Dark
-              <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-            </button>
-          </li>
-          <li>
-            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
-              <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-              Auto
-              <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-            </button>
-          </li>
-        </ul>
-      </div>
-  
       
   <main class="form-signin w-100 m-auto">
     <form>
@@ -83,7 +50,7 @@
       </select>
       </div>
      
-</script>
+  </script>
       <div class="form-floating">
         <input type="email" class="form-control" id="Email" placeholder="name@example.com" fdprocessedid="49p5a">
         <label for="floatingInput">Email</label>
@@ -109,8 +76,8 @@
         <label for="floatingInput">Governorate</label>
       </div>
       <p class="d-inline-flex gap-1">
-        <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Doctor</a>
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Teacher</button>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" onclick="closeTeacher()">Doctor</a>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2" onclick = "closeDoctor()">Teacher</button>
         <!--<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>-->
       </p>
       <div class="row">
@@ -118,8 +85,8 @@
           <div class="collapse multi-collapse" id="multiCollapseExample1">
             <div class="card card-body">
               <!-- Bootstrap-datepicker JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-<script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <script>
     $(document).ready(function(){
       $('#datepicker').datepicker({
         format: 'yyyy-mm-dd', // Format date as desired
@@ -134,78 +101,80 @@
         <label for="fileInput">Select File:</label>
         <input type="file" class="form-control-file" id="fileInput" name="file">
       </div>
+      <!--DOES NOT WORK (SHOULD BE REMOVED)-->
       <button type="submit" class="btn btn-primary">Upload</button>
     </form>
   </div>
   <!-- Custom JS -->
-<script>
-  // script.js
-  $(document).ready(function() {
-        $('#uploadForm').submit(function(e) {
-          e.preventDefault(); // Prevent the form from submitting normally
-      
-          var formData = new FormData(this); // Create a FormData object from the form
-          $.ajax({
-            url: 'upload.php', // Specify the URL to handle the file upload
-            type: 'POST',
-            data: formData,
-            contentType: false, // Don't set content type
-            processData: false, // Don't process the data
-            success: function(response) {
-              // Handle success response
-              console.log('Upload successful:', response);
-            },
-            error: function(xhr, status, error) {
-              // Handle error response
-              console.error('Upload error:', error);
-            }
+      <script>
+        // script.js
+        $(document).ready(function() {
+              $('#uploadForm').submit(function(e) {
+            e.preventDefault(); // Prevent the form from submitting normally
+        
+            var formData = new FormData(this); // Create a FormData object from the form
+            $.ajax({
+              url: 'upload.php', // Specify the URL to handle the file upload
+              type: 'POST',
+              data: formData,
+              contentType: false, // Don't set content type
+              processData: false, // Don't process the data
+              success: function(response) {
+                // Handle success response
+                console.log('Upload successful:', response);
+              },
+              error: function(xhr, status, error) {
+                // Handle error response
+                console.error('Upload error:', error);
+              }
+            });
           });
         });
-      });
       </script>
   
       <script>
-    // Initialize and add the map
-    function initMap() {
-      // The location of the marker
-      var markerPosition = {lat: 40.7128, lng: -74.0060}; // Example: New York City coordinates
-  
-      // The map, centered at marker
-      var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 12, center: markerPosition});
-  
-      // The marker, positioned at markerPosition
-      var marker = new google.maps.Marker({position: markerPosition, map: map});
-    }
-  </script>
+       // Initialize and add the map
+        function initMap() {
+          // The location of the marker
+          var markerPosition = {lat: 40.7128, lng: -74.0060}; // Example: New York City coordinates
+      
+          // The map, centered at marker
+          var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 12, center: markerPosition});
+      
+          // The marker, positioned at markerPosition
+          var marker = new google.maps.Marker({position: markerPosition, map: map});
+        }
+      </script>
   
    <!-- Address, Area, and Governorate text boxes -->
-   <div class="form-group">
-      <label for="address">Address:</label>
-      <input type="text" class="form-control" id="address" placeholder="Enter your address">
-    </div>
+   <div id = "divDoctor">
     <div class="form-group">
-      <label for="area">Area:</label>
-      <input type="text" class="form-control" id="area" placeholder="Enter your area">
-    </div>
-    <div class="form-group">
-      <label for="governorate">Governorate:</label>
-      <input type="text" class="form-control" id="governorate" placeholder="Enter your governorate">
-    </div>
-    <div class="form-group">
-      <label for="governorate">Speciality:</label>
-      <input type="text" class="form-control" id="speciality" placeholder="Enter your speciality">
-    </div>
-    <div class="form-group">
-      <label for="probonocases">Number of cases:</label>
-      <input type="text" class="form-control" id="speciality" placeholder="Enter the number  of pro bono cases I can take">
-    </div>
-
+        <label for="address">Address:</label>
+        <input type="text" class="form-control" id="address" placeholder="Enter your address">
+      </div>
+      <div class="form-group">
+        <label for="area">Area:</label>
+        <input type="text" class="form-control" id="area" placeholder="Enter your area">
+      </div>
+      <div class="form-group">
+        <label for="governorate">Governorate:</label>
+        <input type="text" class="form-control" id="governorate" placeholder="Enter your governorate">
+      </div>
+      <div class="form-group">
+        <label for="governorate">Speciality:</label>
+        <input type="text" class="form-control" id="speciality" placeholder="Enter your speciality">
+      </div>
+      <div class="form-group">
+        <label for="probonocases">Number of cases:</label>
+        <input type="text" class="form-control" id="speciality" placeholder="Enter the number  of pro bono cases I can take">
+      </div>
+   </div>
       
  <!-- Bootstrap-datepicker CSS -->
  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
-</head>
-<body>
+
+    <body>
     <div class="container">
         <div class="form-group">
           <label for="datepicker">Select date where you are available to offer you'r services:</label>
@@ -223,112 +192,112 @@
           <div class="collapse multi-collapse" id="multiCollapseExample2">
             <div class="card card-body">
               <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-<script>
-    $(document).ready(function(){
-      $('#datepicker').datepicker({
-        format: 'yyyy-mm-dd', // Format date as desired
-        autoclose: true
-      });
-    });
-  </script>
-  <div class="container mt-5">
-    <h1>Upload Documents of qualifications</h1>
-    <form id="uploadForm" enctype="multipart/form-data">
-      <div class="form-group">
-        <label for="fileInput">Select File:</label>
-        <input type="file" class="form-control-file" id="fileInput" name="file">
-      </div>
-      <button type="submit" class="btn btn-primary">Upload</button>
-    </form>
-  </div>
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6">
-          <div class="form-group">
-            <label for="subjects">Subjects:</label>
-            <input type="text" class="form-control" id="subjects" placeholder="Enter subjects separated by commas">
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6">
-          <div class="form-group">
-            <label for="subjects">Pro-bono classes:</label>
-            <input type="text" class="form-control" id="probonoclasses" placeholder="Enter the number of pro-bono classes I can teach">
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6">
-          <div class="form-group">
-            <label for="subjects">Students</label>
-            <input type="text" class="form-control" id="probonoclasses" placeholder="Enter the number of students you can give private tutoring to">
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Custom JS -->
-<script>
-// script.js
-$(document).ready(function() {
-      $('#uploadForm').submit(function(e) {
-        e.preventDefault(); // Prevent the form from submitting normally
-    
-        var formData = new FormData(this); // Create a FormData object from the form
-        $.ajax({
-          url: 'upload.php', // Specify the URL to handle the file upload
-          type: 'POST',
-          data: formData,
-          contentType: false, // Don't set content type
-          processData: false, // Don't process the data
-          success: function(response) {
-            // Handle success response
-            console.log('Upload successful:', response);
-          },
-          error: function(xhr, status, error) {
-            // Handle error response
-            console.error('Upload error:', error);
-          }
+    <script>
+      $(document).ready(function(){
+        $('#datepicker').datepicker({
+          format: 'yyyy-mm-dd', // Format date as desired
+          autoclose: true
         });
       });
-    });
-</script>
-<script>
-  $(document).ready(function() {
-    $('#namesSubjectsForm').submit(function(event) {
-      event.preventDefault(); // Prevent form submission
-      
-      // Get values from inputs
-      var names = $('#names').val().split(',');
-      var subjects = $('#subjects').val().split(',');
+    </script>
+    <div class="container mt-5">
+      <h1>Upload Documents of qualifications</h1>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="fileInput">Select File:</label>
+          <input type="file" class="form-control-file" id="fileInput" name="file">
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </form>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+              <label for="subjects">Subjects:</label>
+              <input type="text" class="form-control" id="subjects" placeholder="Enter subjects separated by commas">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+              <label for="subjects">Pro-bono classes:</label>
+              <input type="text" class="form-control" id="probonoclasses" placeholder="Enter the number of pro-bono classes I can teach">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+              <label for="subjects">Students</label>
+              <input type="text" class="form-control" id="probonoclasses" placeholder="Enter the number of students you can give private tutoring to">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
-      // Display entered names and subjects
-      console.log("Names:", names);
-      console.log("Subjects:", subjects);
+    <!-- Custom JS -->
+    <script>
+    // script.js
+    $(document).ready(function() {
+          $('#uploadForm').submit(function(e) {
+            e.preventDefault(); // Prevent the form from submitting normally
+        
+            var formData = new FormData(this); // Create a FormData object from the form
+            $.ajax({
+              url: 'upload.php', // Specify the URL to handle the file upload
+              type: 'POST',
+              data: formData,
+              contentType: false, // Don't set content type
+              processData: false, // Don't process the data
+              success: function(response) {
+                // Handle success response
+                console.log('Upload successful:', response);
+              },
+              error: function(xhr, status, error) {
+                // Handle error response
+                console.error('Upload error:', error);
+              }
+            });
+          });
+        });
+    </script>
+    <script>
+      $(document).ready(function() {
+        $('#namesSubjectsForm').submit(function(event) {
+          event.preventDefault(); // Prevent form submission
+          
+          // Get values from inputs
+          var names = $('#names').val().split(',');
+          var subjects = $('#subjects').val().split(',');
 
-      // Clear form inputs
-      $('#names').val('');
-      $('#subjects').val('');
-    });
-  });
-</script>
-<div class="container">
-  <div class="form-group">
-    <label for="datepicker">Select date where you are available to offer you'r services:</label>
-    <input type="text" class="form-control" id="datepicker" placeholder="Select date">
-  </div>
-</div>
+          // Display entered names and subjects
+          console.log("Names:", names);
+          console.log("Subjects:", subjects);
+
+          // Clear form inputs
+          $('#names').val('');
+          $('#subjects').val('');
+        });
+      });
+    </script>
+    <div class="container">
+      <div class="form-group">
+        <label for="datepicker">Select date where you are available to offer you'r services:</label>
+        <input type="text" class="form-control" id="datepicker" placeholder="Select date">
+      </div>
+    </div>
             </div>
           </div>
         </div>

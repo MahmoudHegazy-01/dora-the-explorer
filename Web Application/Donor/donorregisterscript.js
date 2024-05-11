@@ -1,5 +1,19 @@
 // dropdown.js
 
+function closeTeacher()
+{
+  console.log("clickOn doctor");
+  document.getElementById("multiCollapseExample1").style.display = "";
+  document.getElementById("multiCollapseExample2").style.display = "none";
+}
+
+function closeDoctor()
+{
+  console.log("clickOn teacher");
+  document.getElementById("multiCollapseExample2").style.display = "";
+  document.getElementById("multiCollapseExample1").style.display = "none";
+}
+
 // dropdown.js
 
 
