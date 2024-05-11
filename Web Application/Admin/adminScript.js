@@ -456,3 +456,7 @@ function hideRowsByName(name) {
         }
     }
 }
+
+function signout(){
+    window.location.href = "../login.html";
+}
