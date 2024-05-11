@@ -18,3 +18,32 @@ function login() {
 function register() {
   window.location.href = "register.html";
 }
+function checkRegister() {
+  var register = document.getElementById("selectRegister").value;
+  var common = document.getElementById("commonRegister");
+  var donor = document.getElementById("donorRegister");
+
+  common.style.display = "none";
+  donor.style.display = "none";
+
+  if (register === "Donor") {
+    common.style.display = "block";
+    donor.style.display = "block";
+  }
+  if (register === "Doctor") {
+    common.style.display = "block";
+  }
+  if (register === "Teacher") {
+    common.style.display = "block";
+  }
+  if (register === "Organization") {
+    common.style.display = "block";
+  }
+}
+
+function check() {
+  var fname = document.getElementById("fname").value;
+  if (fname === null || fname === "") {
+    alert("fill fields");
+  }
+}
