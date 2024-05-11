@@ -108,6 +108,7 @@
         <input type="Governorate" class="form-control" id="Governorate" placeholder="Governorate" fdprocessedid="49p5a">
         <label for="floatingInput">Governorate</label>
       </div>
+      
       <p class="d-inline-flex gap-1">
         <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Doctor</a>
         <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Teacher</button>
@@ -213,7 +214,15 @@
         </div>
       </div>
   
-  
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Maps</h2>
+            <!-- Map container -->
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
   
   
             </div>
@@ -354,7 +363,8 @@ $(document).ready(function() {
   
     
 
-
+<!-- Google Maps API with API Key -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlVP0YvsSz5M7e_Rf_xeb0LCQF7qIMuxs&callback=initMap" async defer></script>
 
 
 
