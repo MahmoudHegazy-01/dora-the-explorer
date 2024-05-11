@@ -146,9 +146,10 @@ var newpass;
 var conpass;
 function changepass() {
     if(document.getElementById("oldPassword")!==null && document.getElementById("newPassword")!==null && document.getElementById("confirmPassword")!==null){
-        oldpass = (String) (document.getElementById("oldPassword").value);
-        newpass = (String) (document.getElementById("newPassword").value);
-        conpass = (String) (document.getElementById("confirmPassword").value);
+        oldpass = document.getElementById("oldPassword").value;
+        newpass = document.getElementById("newPassword").value;
+        conpass = document.getElementById("confirmPassword").value;
+        var prev = localStorage.getItem("myVariable");
     }
     else{
         return;
@@ -158,7 +159,7 @@ function changepass() {
         alert("Empty field detected.");
         return;
     }
-    if(oldpass !== password){
+    if(oldpass !== prev){
         alert("Old password entered is wrong.");
         window.location.href = "changepassword.html";
         return;
@@ -174,14 +175,10 @@ function changepass() {
         return;
     }
     else{
-        password = conpass;
+        localStorage.setItem("myVariable", newpass);
         window.location.href = "adminaccount.html";
         return;
     }
-}
-
-if (document.getElementById("output")!=null){
-    document.getElementById("output").innerHTML = password;
 }
 
 if (document.getElementById("toggleVisibilityOld")!=null){

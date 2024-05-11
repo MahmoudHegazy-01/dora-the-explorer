@@ -136,6 +136,13 @@
     <div class="d-flex gap-2 justify-content-center py-5">
         <button class="btn btn-primary d-inline-flex align-items-center" type="button" onClick="pass()">Change Password</button>
     </div>
+    <script>
+      // Retrieve the variable from localStorage
+      var myVariable = localStorage.getItem("myVariable");
+
+      // Display the variable in a div with id="output"
+      document.getElementById("output").innerHTML = myVariable;
+  </script>
     <script src="adminScript.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
