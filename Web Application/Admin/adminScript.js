@@ -249,28 +249,36 @@ function filterTable() {
     for (var i = 1; i < rows.length; i++) { // Start from index 1 to skip header row
         var cells = rows[i].getElementsByTagName("td");
         var showRow = true;
+        var areaMatch = false;
+        var governorateMatch = false;
+        var typeMatch = false;
 
         // Check if any filter criteria is matched
         for (var j = 0; j < cells.length; j++) {
             var cellValue = cells[j].textContent.toUpperCase();
-            if ((areaFilter === "" || cellValue.includes(areaFilter)) &&
-                (governorateFilter === "" || cellValue.includes(governorateFilter)) &&
-                (typeFilter === "" || cellValue.includes(typeFilter))) {
-                // Show the row if it matches all filter criteria
-                rows[i].style.display = "";
-                showRow = true;
-                break;
-            } else {
-                // Hide the row if it doesn't match any filter criteria
-                showRow = false;
+            if (!areaMatch){
+                areaMatch = areaFilter === "" || cellValue.includes(areaFilter);
             }
+            if (!governorateMatch){
+                governorateMatch = governorateFilter === "" || cellValue.includes(governorateFilter);
+            }
+            if (!typeMatch){
+                typeMatch = typeFilter === "" || cellValue.includes(typeFilter);
+            }
+            
         }
 
-        if (!showRow) {
+        if (areaMatch && governorateMatch && typeMatch) {
+            rows[i].style.display = "";
+            showRow = true;
+        }
+        else {
             rows[i].style.display = "none";
+            showRow = false;
         }
     }
 }
+
 
 if (document.getElementById("areaFilter")!=null){
     document.getElementById("areaFilter").addEventListener("change", filterTable);
