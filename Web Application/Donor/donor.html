@@ -20,7 +20,7 @@
       
   <main class="form-signin w-100 m-auto">
     <form>
-      <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+      
       <h1 class="h3 mb-3 fw-normal">Register</h1>
   
       <div class="form-floating">
@@ -50,7 +50,11 @@
       </select>
       </div>
      
+<<<<<<< Updated upstream
   </script>
+=======
+
+>>>>>>> Stashed changes
       <div class="form-floating">
         <input type="email" class="form-control" id="Email" placeholder="name@example.com" fdprocessedid="49p5a">
         <label for="floatingInput">Email</label>
@@ -133,6 +137,7 @@
         });
       </script>
   
+<<<<<<< Updated upstream
       <script>
        // Initialize and add the map
         function initMap() {
@@ -147,6 +152,9 @@
           var marker = new google.maps.Marker({position: markerPosition, map: map});
         }
       </script>
+=======
+   
+>>>>>>> Stashed changes
   
    <!-- Address, Area, and Governorate text boxes -->
    <div id = "divDoctor">
@@ -174,6 +182,7 @@
       
  <!-- Bootstrap-datepicker CSS -->
  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+<<<<<<< Updated upstream
 
     <body>
     <div class="container">
@@ -182,16 +191,18 @@
           <input type="text" class="form-control" id="datepicker" placeholder="Select date">
         </div>
       </div>
+=======
+</head>
+<body>
+  <div class="container">
+    <div class="form-group">
+      <label for="datepicker">Select date where you are available to offer you're services:</label>
+      <input type="text" class="form-control" id="datepicker" placeholder="Select date">
+    </div>
+  </div>
+>>>>>>> Stashed changes
   
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-md-12">
-            <h2>Maps</h2>
-            <!-- Map container -->
-            <div id="map"></div>
-          </div>
-        </div>
-      </div>
+   
   
   
             </div>
@@ -256,6 +267,7 @@
       </div>
     </div>
 
+<<<<<<< Updated upstream
    
     
     <div class="container">
@@ -264,6 +276,38 @@
         <input type="text" class="form-control" id="datepicker" placeholder="Select date">
       </div>
     </div>
+=======
+      // Display entered names and subjects
+      console.log("Names:", names);
+      console.log("Subjects:", subjects);
+
+      // Clear form inputs
+      $('#names').val('');
+      $('#subjects').val('');
+    });
+  });
+</script>
+<div class="container">
+  <div class="form-group">
+    <label for="datepicker">Select date where you are available to offer you'r services:</label>
+    <input type="text" class="form-control" id="datepicker" placeholder="Select date">
+  </div>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Bootstrap-datepicker JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('#datepicker').datepicker({
+      format: 'yyyy-mm-dd', // Format date as desired
+      autoclose: true
+    });
+  });
+</script>
+>>>>>>> Stashed changes
             </div>
           </div>
         </div>
@@ -292,7 +336,8 @@
 <!-- Google Maps API with API Key -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlVP0YvsSz5M7e_Rf_xeb0LCQF7qIMuxs&callback=initMap" async defer></script>
 
-
+ <!-- Bootstrap-datepicker CSS -->
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
 
     
  <!-- Custom JS -->
