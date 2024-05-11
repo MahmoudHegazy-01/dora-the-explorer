@@ -294,14 +294,6 @@ function reject(button) {
     alert("Rejected!");
 }
 
-function accept() {
-    alert("Accepted!");
-  }
-
-function reject() {
-    alert("Rejected!");
-}
-
 function hope(){
     window.location.href = "hope.html";
 }
@@ -431,29 +423,12 @@ function downloadPdf() {
     document.body.removeChild(a);
 }
 
-function deleteorgaccount(name){
-    alert("Account deleted!");
-    window.location.href = "orgreg.html";
-    hideRowsByName(name);
-}
-
-function deletedonaccount(name){
-    alert("Account deleted!");
-    window.location.href = "donreg.html";
-    hideRowsByName(name);
-}
-
-function hideRowsByName(name) {
-    var table = document.getElementById("dataTable");
-    var rows = table.getElementsByTagName("tr");
-    for (var i = 0; i < rows.length; i++) {
-        var cells = rows[i].getElementsByTagName("td");
-        if (cells.length > 1 && cells[1].innerText === name) { // Check if the second cell (index 1) matches the specified name (Organization Name)
-            rows[i].style.display = "none"; // Hide the row
-        }
-    }
-}
-
 function signout(){
     window.location.href = "../login.html";
 }
+
+function deletetherow(button) {
+    var row = button.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+    alert("Deleted!");
+  }
