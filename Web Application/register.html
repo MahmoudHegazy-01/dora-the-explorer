@@ -3,111 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DONOR</title>
+    <title>Register Page</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/Web Application/MainStyleSheet.css" />
+    <link rel="stylesheet" href="MainStyleSheet.css" />
   </head>
   <body>
-  <!-- Nav Bar -->
-  <header>
-    <div class="px-3 py-2 text-bg-light border-bottom">
-      <div class="container">
-        <div
-          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+    <div class="container-fluid" id="Header">
+      <img
+        src="/Web Application/Pics/Logo.png"
+        alt="DONORA LOGO"
+        width="10%"
+        height="10%"
+      />
+    </div>
+    <div class="container-fluid">
+      <div class="col-md-2">
+        Register as:
+        <select
+          class="form-select"
+          id="selectRegister"
+          aria-label="Default select example"
+          onchange="checkRegister()"
         >
-          <a
-            href="/"
-            class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
-          >
-            <svg
-              class="bi me-2"
-              width="40"
-              height="32"
-              role="img"
-              aria-label="Bootstrap"
-            >
-              <use xlink:href="#bootstrap"></use>
-            </svg>
-          </a>
-
-          <ul
-            class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
-          >
-            <li>
-              <a href="" class="nav-link text-dark" onClick="home()">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                  <use xlink:href="#home"></use>
-                </svg>
-                Home
-              </a>
-            </li>
-            <li>
-              <li  class="nav-item dropdown">
-                
-                <a  class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                    <use xlink:href="#grid"></use>
-                  </svg>
-                  Notifications
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                </ul>
-              </li>
-            </li>
-            <li>
-              <li  class="nav-item dropdown">
-                <a  class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                    <use xlink:href="#grid"></use>
-                  </svg>
-                  Profile
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
-                  <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
-                </ul>
-              </li>
-                
-              
-            </li>
-          </ul>
+          <option disabled selected>Register</option>
+          <option value="Donor">Donor</option>
+          <option value="Teacher">Teacher</option>
+          <option value="Doctor">Doctor</option>
+          <option value="Organization">Organization</option>
+        </select>
+      </div>
+    </div>
+    <br />
+    <div id="commonRegister" style="display: none">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <input
+              class="form-control"
+              id="fname"
+              placeholder="First Name"
+              type="text"
+            />
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" placeholder="Last Name" type="text" />
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" placeholder="Gender" type="text" />
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" placeholder="Email" type="text" />
+          </div>
+          <div class="col-md-2">
+            <input
+              class="form-control"
+              placeholder="Contact Number"
+              type="text"
+            />
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" placeholder="Governate" type="text" />
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" placeholder="Password" type="text" />
+          </div>
         </div>
       </div>
     </div>
-    <div class="px-3 py-2 border-bottom mb-3">
-      <div class="container d-flex flex-wrap justify-content-center">
-        <a href="/Web Application/Organization/organization.html">
-          <img
-            src="/Web Application/Pics/back-button.png"
-            width="25"
-            height="25"
-            alt="back button"
-          />
-          <br>
-        </a>
 
-        <form
-          class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto"
-          role="search"
-        >
-          <input
-            type="search"
-            class="form-control"
-            placeholder="Search..."
-            aria-label="Search"
-          />
-        </form>
-        <br />
+    <div id="donorRegister" style="display: none">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <input class="form-control" placeholder="Address" type="text" />
+          </div>
+        </div>
       </div>
     </div>
-  </header>
-<!-- Nav Bar End -->
-  
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <button type="button" onclick="check()">Submit</button>
+
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

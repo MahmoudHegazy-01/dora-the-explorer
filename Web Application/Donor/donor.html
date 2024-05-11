@@ -247,51 +247,8 @@
       </div>
     </div>
 
-    <!-- Custom JS -->
-    <script>
-    // script.js
-    $(document).ready(function() {
-          $('#uploadForm').submit(function(e) {
-            e.preventDefault(); // Prevent the form from submitting normally
-        
-            var formData = new FormData(this); // Create a FormData object from the form
-            $.ajax({
-              url: 'upload.php', // Specify the URL to handle the file upload
-              type: 'POST',
-              data: formData,
-              contentType: false, // Don't set content type
-              processData: false, // Don't process the data
-              success: function(response) {
-                // Handle success response
-                console.log('Upload successful:', response);
-              },
-              error: function(xhr, status, error) {
-                // Handle error response
-                console.error('Upload error:', error);
-              }
-            });
-          });
-        });
-    </script>
-    <script>
-      $(document).ready(function() {
-        $('#namesSubjectsForm').submit(function(event) {
-          event.preventDefault(); // Prevent form submission
-          
-          // Get values from inputs
-          var names = $('#names').val().split(',');
-          var subjects = $('#subjects').val().split(',');
-
-          // Display entered names and subjects
-          console.log("Names:", names);
-          console.log("Subjects:", subjects);
-
-          // Clear form inputs
-          $('#names').val('');
-          $('#subjects').val('');
-        });
-      });
-    </script>
+   
+    
     <div class="container">
       <div class="form-group">
         <label for="datepicker">Select date where you are available to offer you'r services:</label>
