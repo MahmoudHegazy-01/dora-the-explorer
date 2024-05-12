@@ -48,11 +48,15 @@ function checkRegister() {
 }
 
 function check() {
+
+  var register = document.getElementById("selectRegister").value;
+  
   var fname = document.getElementById("fname").value;
   var lname = document.getElementById("lname").value;
   var gender = document.getElementById("Gender-Dropdown").value;
   var email = document.getElementById("email").value;
   var contactnumber = document.getElementById("contactnumber").value;
+  var governate = document.getElementById("governate").value;
   var address = document.getElementById("address").value;
   var addressclinic = document.getElementById("addressclinic").value;
   var areaclinic = document.getElementById("areaclinic").value;
@@ -62,16 +66,206 @@ function check() {
   var subjects = document.getElementById("subjects").value;
   var numbclasses = document.getElementById("numbclasses").value;
   var numbstudents = document.getElementById("numbstudents").value;
+  var password = document.getElementById("password").value;
+
+  var fname1 = document.getElementById("fname");
+  var lname1 = document.getElementById("lname");
+  var gender1 = document.getElementById("Gender-Dropdown");
+  var email1 = document.getElementById("email").value;
+  var contactnumber1 = document.getElementById("contactnumber");
+  var governate1 = document.getElementById("governate").value;
+  var address1 = document.getElementById("address").value;
+  var addressclinic1 = document.getElementById("addressclinic");
+  var areaclinic1 = document.getElementById("areaclinic").value;
+  var Governateclinic1 = document.getElementById("Governateclinic");
+  var speciality1 = document.getElementById("speciality");
+  var casesnumb1 = document.getElementById("casesnumb");
+  var subjects1 = document.getElementById("subjects");
+  var numbclasses1 = document.getElementById("numbclasses");
+  var numbstudents1 = document.getElementById("numbstudents");
+  var password1 = document.getElementById("password");
  
  
   
-
-  if (fname === null || fname === "" || lname === null || lname === "" || gender === "Gender" || email === null || email === "" || contactnumber === null || contactnumber === "" ||governate === null || governate === "" || lnapasswordme === null || password === "" || address === null || address === "" || addressclinic === null || addressclinic === "" || areaclinic === null || areaclinic === ""|| Governateclinic === null || Governateclinic === "" || speciality === null || speciality === "" || casesnumb === null || casesnumb === "" || subjects === null || subjects === "" || numbclasses === null || numbclasses === "" || numbstudents === null || numbstudents === "") {
+if(register === "Donor"){
+  if (fname === null || fname === "" || lname === null || lname === "" || gender === "Gender" || email === null || email === "" || contactnumber === null || contactnumber === "" ||governate === null || governate === "" || password === null || password === "" || address === null || address === ""){
     alert("fill fields");
-    //fname.classList.remove("form-control");
-    //fname.classList.add("form-control is-invalid");
+  }
+  if(fname === null || fname === ""){
+    fname1.className = "form-control is-invalid"
+  }
+  else{
+    fname1.className = "form-control is-valid"
+  }
+  if(lname === null || lname === ""){
+    lname1.className = "form-control is-invalid"
+  }
+  else{
+    lname1.className = "form-control is-valid"
+  }
+  if(email === null || email === ""){
+    email1.className = "form-control is-invalid"
+  }
+  else{
+    email1.className = "form-control is-valid"
+  }
+  if(contactnumber === null || contactnumber === ""){
+    contactnumber1.className = "form-control is-invalid"
+  }
+  else{
+    contactnumber1.className = "form-control is-valid"
+  }
+  if(governate === null || governate === ""){
+    governate1.className = "form-control is-invalid"
+  }
+  else{
+    governate1.className = "form-control is-valid"
+  }
+  if(address === null || address === ""){
+    address1.className = "form-control is-invalid"
+  }
+  else{
+    address1.className = "form-control is-valid"
+  }
+  if(password === null || password === ""){
+    password1.className = "form-control is-invalid"
+  }
+  else{
+    password1.className = "form-control is-valid"
   }
 
+}
+  if (register === "Doctor") {
+    if (fname === null || fname === "" || lname === null || lname === "" || gender === "Gender" || email === null || email === "" || contactnumber === null || contactnumber === "" ||governate === null || governate === "" || password === null || password === "" || addressclinic === null || addressclinic === "" || areaclinic === null || areaclinic === ""|| Governateclinic === null || Governateclinic === "" || speciality === null || speciality === "" || casesnumb === null || casesnumb === "" ){
+      alert("fill fields");
+  }
+  if(fname === null || fname === ""){
+    fname1.className = "form-control is-invalid"
+  }
+  else{
+    fname1.className = "form-control is-valid"
+  }
+  if(lname === null || lname === ""){
+    lname1.className = "form-control is-invalid"
+  }
+  else{
+    lname1.className = "form-control is-valid"
+  }
+  if(email === null || email === ""){
+    email1.className = "form-control is-invalid"
+  }
+  else{
+    email1.className = "form-control is-valid"
+  }
+  if(contactnumber === null || contactnumber === ""){
+    contactnumber1.className = "form-control is-invalid"
+  }
+  else{
+    contactnumber1.className = "form-control is-valid"
+  }
+  if(governate === null || governate === ""){
+    governate1.className = "form-control is-invalid"
+  }
+  else{
+    governate1.className = "form-control is-valid"
+  }
+  if(password === null || password === ""){
+    password1.className = "form-control is-invalid"
+  }
+  else{
+    password1.className = "form-control is-valid"
+  }
+  if(addressclinic === null || addressclinic === ""){
+    addressclinic1.className = "form-control is-invalid"
+  }
+  else{
+    addressclinic1.className = "form-control is-valid"
+  }
+  if(areaclinic === null || areaclinic === ""){
+    areaclinic1.className = "form-control is-invalid"
+  }
+  else{
+    areaclinic1.className = "form-control is-valid"
+  }
+  if(Governateclinic === null || Governateclinic === ""){
+    Governateclinic1.className = "form-control is-invalid"
+  }
+  else{
+    Governateclinic1.className = "form-control is-valid"
+  }
+  if(speciality === null || speciality === ""){
+    speciality1.className = "form-control is-invalid"
+  }
+  else{
+    speciality1.className = "form-control is-valid"
+  }
+  if(casesnumb === null || casesnumb === ""){
+    casesnumb1.className = "form-control is-invalid"
+  }
+  else{
+    casesnumb1.className = "form-control is-valid"
+  }
+}
+  if (register === "Teacher") {
+    if (fname === null || fname === "" || lname === null || lname === "" || gender === "Gender" || email === null || email === "" || contactnumber === null || contactnumber === "" ||governate === null || governate === "" || password === null || password === "" || subjects === null || subjects === "" || numbclasses === null || numbclasses === "" || numbstudents === null || numbstudents === ""){
+      alert("fill fields");
+  }
+  if(fname === null || fname === ""){
+    fname1.className = "form-control is-invalid"
+  }
+  else{
+    fname1.className = "form-control is-valid"
+  }
+  if(lname === null || lname === ""){
+    lname1.className = "form-control is-invalid"
+  }
+  else{
+    lname1.className = "form-control is-valid"
+  }
+  if(email === null || email === ""){
+    email1.className = "form-control is-invalid"
+  }
+  else{
+    email1.className = "form-control is-valid"
+  }
+  if(contactnumber === null || contactnumber === ""){
+    contactnumber1.className = "form-control is-invalid"
+  }
+  else{
+    contactnumber1.className = "form-control is-valid"
+  }
+  if(governate === null || governate === ""){
+    governate1.className = "form-control is-invalid"
+  }
+  else{
+    governate1.className = "form-control is-valid"
+  }
+  if(password === null || password === ""){
+    password1.className = "form-control is-invalid"
+  }
+  else{
+    password1.className = "form-control is-valid"
+  }
+  if(subjects === null || subjects === ""){
+    subjects1.className = "form-control is-invalid"
+  }
+  else{
+    subjects1.className = "form-control is-valid"
+  }
+  if(numbclasses === null || numbclasses === ""){
+    numbclasses1.className = "form-control is-invalid"
+  }
+  else{
+    numbclasses1.className = "form-control is-valid"
+  }
+  if(numbstudents === null || numbstudents === ""){
+    numbstudents1.className = "form-control is-invalid"
+  }
+  else{
+    numbstudents1.className = "form-control is-valid"
+  }
+  
+}
 
 }
 document.addEventListener("DOMContentLoaded", function() {
