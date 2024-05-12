@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Information</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap-datepicker CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/Web Application/MainStyleSheet.css" />
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+      async
+      defer
+    ></script>
+
+    <style>
+      /* Set map height */
+      #map {
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-group">
+        <label for="datepicker"
+          >Select date where you are available to offer you'r services:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="datepicker"
+          placeholder="Select date"
+        />
+      </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap-datepicker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#datepicker").datepicker({
+          format: "yyyy-mm-dd", // Format date as desired
+          autoclose: true,
+        });
+      });
+    </script>
+    <div class="container mt-5">
+      <h1>Upload Documents of qualifications</h1>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="fileInput">Select File:</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="fileInput"
+            name="file"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </form>
+    </div>
+    <!-- Custom JS -->
+    <script>
+      // script.js
+      $(document).ready(function () {
+        $("#uploadForm").submit(function (e) {
+          e.preventDefault(); // Prevent the form from submitting normally
+
+          var formData = new FormData(this); // Create a FormData object from the form
+          $.ajax({
+            url: "upload.php", // Specify the URL to handle the file upload
+            type: "POST",
+            data: formData,
+            contentType: false, // Don't set content type
+            processData: false, // Don't process the data
+            success: function (response) {
+              // Handle success response
+              console.log("Upload successful:", response);
+            },
+            error: function (xhr, status, error) {
+              // Handle error response
+              console.error("Upload error:", error);
+            },
+          });
+        });
+      });
+    </script>
+
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of the marker
+        var markerPosition = { lat: 40.7128, lng: -74.006 }; // Example: New York City coordinates
+
+        // The map, centered at marker
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 12,
+          center: markerPosition,
+        });
+
+        // The marker, positioned at markerPosition
+        var marker = new google.maps.Marker({
+          position: markerPosition,
+          map: map,
+        });
+      }
+    </script>
+
+    <!-- Address, Area, and Governorate text boxes -->
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        placeholder="Enter your address"
+      />
+    </div>
+    <div class="form-group">
+      <label for="area">Area:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="area"
+        placeholder="Enter your area"
+      />
+    </div>
+    <div class="form-group">
+      <label for="governorate">Governorate:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="governorate"
+        placeholder="Enter your governorate"
+      />
+    </div>
+    <div class="form-group">
+      <label for="governorate">Speciality:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="speciality"
+        placeholder="Enter your speciality"
+      />
+    </div>
+
+    <select id="Number-Dropdown">
+      <option>Number of pro bono cases I can take</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+    </select>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Google Maps Marker</h2>
+          <!-- Map container -->
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Google Maps API with API Key -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+      async
+      defer
+    ></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Google Maps Marker</h2>
+      <!-- Map container -->
+      <div id="map"></div>
+    </div>
+  </div>
+</div>
+<!-- Google Maps API with API Key -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+
+
+
+    
+ <!-- Custom JS -->
+ <script src="script.js"></script>
+</body>
+</html>

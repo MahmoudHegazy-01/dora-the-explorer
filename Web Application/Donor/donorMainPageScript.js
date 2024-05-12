@@ -26,7 +26,6 @@ function searchFunction1() {
     filter = input.toUpperCase();
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
-  
     // Loop through all table rows, and hide those who don't match the search query
     for (i = 0; i < tr.length; i++) {
       td = tr[i].getElementsByTagName("td")[1];
@@ -77,7 +76,7 @@ function searchFunction1() {
         let arr = ["none","Fruits & Vegetables","Canned Foods","Fresh Meals","Baked Goods"];
         fillDropDown(arr,"filterDropDown");
       }
-    if(obj.localeCompare("Medical Cases") == 0)
+    if(obj.localeCompare("Patient Cases") == 0)
       {
         let arr = ["none","Medical Speciality","Area","Governorate","Hospital"];
         fillDropDown(arr,"filterDropDown");

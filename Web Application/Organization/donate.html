@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ORGANIZATION</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/Web Application/MainStyleSheet.css" />
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <header>
+      
+      <div class="px-3 py-2 text-bg-dark border-bottom">
+        
+        <div class="container">
+          
+          <div
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+          >
+          <img src="/Web Application/Pics/Logo3.png" alt="DONORA LOGO"
+            width="5%"
+            height="5%">
+            <a
+              href="/"
+              class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
+            >
+              <svg
+                class="bi me-2"
+                width="40"
+                height="32"
+                role="img"
+                aria-label="Bootstrap"
+              >
+                <use xlink:href="#bootstrap"></use>
+              </svg>
+            </a>
+            
+            <ul
+              class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
+            >
+            <li>
+              <a href="" class="nav-link text-white" onClick="home()">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="#home"></use>
+                </svg>
+                Home
+              </a>
+            </li>
+            <li>
+              <li  class="nav-item dropdown">
+                
+                <a  class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                    <use xlink:href="#grid"></use>
+                  </svg>
+                  Notifications
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  
+                  <li id="Notif2" >
+                    <label >No Notifications yet</label>
+                  </li>
+                </ul>
+              </li>
+            </li>
+            <li>
+              <li  class="nav-item dropdown">
+                <a  class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                    <use xlink:href="#grid"></use>
+                  </svg>
+                  Profile
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
+                </ul>
+              </li>
+                
+              
+            </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-3 py-2 border-bottom mb-3">
+        <div class="container d-flex flex-wrap justify-content-center">
+          <a href="/Web Application/Organization/organization.html">
+            <img
+              src="/Web Application/Pics/back-button.png"
+              width="25"
+              height="25"
+              alt="back button"
+            />
+            <br />
+          </a>
+
+          <form
+            class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto"
+            role="search"
+          >
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+          </form>
+          <br />
+        </div>
+      </div>
+    </header>
+    <!-- Nav Bar End-->
+
+    <!-- Create a donation post-->
+
+    <div class="donationPost">
+      <div class="col-md-6 offset-md-3 mt-5">
+        <label for="Category">Donation Type: </label>
+        <select
+          class="form-select"
+          id="selectCateory"
+          aria-label="Default select example"
+          onchange="checkDonation2()"
+        >
+          <option disabled selected>Donation Type</option>
+          <option value="Toys">Toys</option>
+          <option value="Clothes">Clothes</option>
+          <option value="Food">Food</option>
+          <option value="Medical Supplies">Medical Supplies</option>
+          <option value="School Supplies">School Supplies</option>
+          <option value="Blood Donations">Blood Donations</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="commonDonations" class="container-fluid" style="display: none">
+      <div id="DonoInformation">
+        Donation Type:
+        <mark><label id="selectedCategory"></label></mark>
+        <br />
+        <br />
+      </div>
+    </div>
+
+    <!--toys-->
+
+    <div id="Toys" class="container-fluid" style="display: none">
+      <div class="col-md-2" id="ToysInformation">
+        Type:
+        <input class="form-control is-invalid" type="text" />
+        Category:
+        <input id="DonationName" type="text" />
+
+        Age:
+        <input type="number" />
+        Gender:
+        <input type="text" />
+        <br />
+        <br />
+        Quantity:
+        <input id="toysQuantity" type="number" />
+        <br />
+        <br />
+        <label for="fileInput">Picture:</label>
+        <input
+          type="file"
+          class="form-control-file"
+          id="fileInput"
+          name="file"
+        />
+        <br />
+        <br />
+
+        <a class="btn btn-primary" onclick="addToys()" role="button">Submit</a>
+      </div>
+    </div>
+
+    <!--clothes-->
+
+    <div id="Clothes" class="container-fluid" style="display: none">
+      <div id="ClothesInformation">
+        Type of Clothing:
+        <input id="clothType" type="text" />
+        Age:
+        <input type="number" />
+        Gender:
+        <input type="text" />
+        Season:
+        <input type="text" />
+        <br />
+        <br />
+        Material:
+        <input type="text" />
+
+        Quantity:
+        <input id="clotheQuantity" type="number" />
+        <br />
+        <br />
+        <a class="btn btn-primary" onclick="addClothes()" role="button"
+          >Submit</a
+        >
+      </div>
+    </div>
+    <!--food-->
+
+    <div id="Food" class="container-fluid" style="display: none">
+      <div id="FoodInformation">
+        Food Name:
+        <input id="foodType" type="text" />
+        <br />
+        <br />
+        Quantity:
+        <input id="FoodQuantity" type="number" />
+        <input id="foodUnit" placeholder="Unit" type="text" />
+        <br />
+        <br />
+        <a class="btn btn-primary" onclick="addFood()" role="button">Submit</a>
+      </div>
+    </div>
+
+    <!--Medical Supplies-->
+    <div id="Medical Supplies" class="container-fluid" style="display: none">
+      <div id="SuppliesInformation">
+        Device Type:
+        <input id="SuppliesType" type="text" />
+        Use:
+        <input type="text" />
+        <br />
+        <br />
+        Quantity:
+        <input id="SuppliesQuantity" type="number" />
+        <br />
+        <br />
+        <label for="fileInput">Picture:</label>
+        <input
+          type="file"
+          class="form-control-file"
+          id="fileInput"
+          name="file"
+        />
+        <br />
+        <br />
+
+        <a class="btn btn-primary" onclick="addSupplies()" role="button"
+          >Submit</a
+        >
+      </div>
+    </div>
+
+    <!--School Supplies-->
+    <div id="School" class="container-fluid" style="display: none">
+      <div id="SchoolInformation">
+        Stationary Type:
+        <input id="SchoolType" type="text" />
+
+        Quantity:
+        <input id="SchoolQuantity" type="number" />
+
+        <br />
+        <br />
+        <a class="btn btn-primary" onclick="addSchool()" role="button"
+          >Submit</a
+        >
+      </div>
+    </div>
+
+    <!--Blood Donations-->
+    <div id="Blood Donations" class="container-fluid" style="display: none">
+      <div id="BloodInformation">
+        Patient Name:
+        <input type="text" />
+        Blood Type:
+        <input id="BloodType" type="text" />
+
+        Quantity:
+        <input id="BloodQuantity" type="number" />
+
+        <br />
+        <br />
+        <a class="btn btn-primary" onclick="addBlood()" role="button">Submit</a>
+      </div>
+    </div>
+
+    <table class="container-fluid" id="myTable">
+      <tr class="header">
+        <th style="width: 20%">Donation Name</th>
+        <th style="width: 20%">Donation Type</th>
+        <th style="width: 20%">Status</th>
+        <th style="width: 20%">Quantity</th>
+        <th style="width: 20%"></th>
+      </tr>
+      <tr id="done">
+        <td>Dolls</td>
+        <td>Toys</td>
+        <td>
+          <a href="/Web Application/Organization/Fullfilled.html">Fulfilled</a>
+        </td>
+        <td>30</td>
+        <td><a class="btn btn-primary" onclick=" remDone()">Delete</a></td>
+      </tr>
+    </table>
+    <!--End of donation post -->
+
+    <script src="organization.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
