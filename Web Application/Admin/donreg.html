@@ -99,6 +99,21 @@
             </li>
             <li>
               <li  class="nav-item dropdown">
+                
+                <a  class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                    <use xlink:href="#grid"></use>
+                  </svg>
+                  Registered Accounts
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="orgreg.html">Registered Organizations</a></li>
+                  <li><a class="dropdown-item" href="donreg.html">Registered Donors</a></li>
+                </ul>
+              </li>
+            </li>
+            <li>
+              <li  class="nav-item dropdown">
                 <a  class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                     <use xlink:href="#grid"></use>
@@ -211,6 +226,17 @@
           </tbody>
         </table>
         
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="button-container">
+          <button class="btn btn-danger" onclick="closeModal()">&times;</button>
+        </div>
+        <br>
+        <p>Account Deleted Succesfully!</p>
+      </div>
     </div>
     <script src="adminScript.js"></script>
     <script

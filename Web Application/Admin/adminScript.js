@@ -293,13 +293,13 @@ if (document.getElementById("typeFilter")!=null){
 function accept(button) {
     var row = button.parentNode.parentNode;
     row.parentNode.removeChild(row);
-    alert("Accepted!");
+    openModal();
   }
 
 function reject(button) {
     var row = button.parentNode.parentNode;
     row.parentNode.removeChild(row);
-    alert("Rejected!");
+    openModalRej();
 }
 
 function hope(){
@@ -438,9 +438,43 @@ function signout(){
 function deletetherow(button) {
     var row = button.parentNode.parentNode;
     row.parentNode.removeChild(row);
-    alert("Deleted!");
+    openModal();
   }
 
   function goBack() {
     window.history.back();
+  }
+
+  function openModal() {
+    document.getElementById("myModal").style.display = "block";
+  }
+  
+  // Function to close the modal
+  function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+  }
+  
+  // Close the modal when clicking outside the modal content
+  window.onclick = function(event) {
+    var modal = document.getElementById("myModal");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  function openModalRej() {
+    document.getElementById("myModalRej").style.display = "block";
+  }
+  
+  // Function to close the modal
+  function closeModalRej() {
+    document.getElementById("myModalRej").style.display = "none";
+  }
+  
+  // Close the modal when clicking outside the modal content
+  window.onclick = function(event) {
+    var modal = document.getElementById("myModalRej");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
   }
