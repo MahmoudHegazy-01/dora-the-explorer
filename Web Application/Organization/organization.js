@@ -98,7 +98,6 @@ function addClothes() {
     cell5.appendChild(deleteButton);
 
     alert("Donation Added");
-    notification("Donation added succesfully");
   }
 }
 function addToys() {
@@ -324,7 +323,10 @@ function remDone() {
     .deleteRow(document.getElementById("done").rowIndex);
 }
 
-function notification(message) {
+function notification() {
   var notif = document.getElementById("Notif2");
-  notif.textContent = message;
+  var mainNotif = document.getElementById("navbarDropdownMenuLink");
+  mainNotif.style.color = "#FF0000";
+  mainNotif.className = "nav-link dropdown-toggle";
+  notif.textContent = "Donation post was fullfilled";
 }
