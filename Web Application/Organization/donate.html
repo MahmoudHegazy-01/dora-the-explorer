@@ -55,7 +55,7 @@
             <li>
               <li  class="nav-item dropdown">
                 
-                <a  class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                <a  class="nav-link text-white dropdown-toggle" onclick="defNotif()" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                     <use xlink:href="#grid"></use>
                   </svg>
@@ -78,7 +78,7 @@
                   Profile
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><a class="dropdown-item" href="/Web Application/Organization/organization.html">Settings</a></li>
                   <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
                 </ul>
               </li>
@@ -114,16 +114,21 @@
             />
           </form>
           <br />
+          <div><a  href="/Web Application/Organization/sched.html"><button style="width: 5;" class="btn btn-primary">Schedule Delivery</button></a> </div>
+          <label>&nbsp</label>
+          <div class=""> <button onclick="notification()" class="btn btn-primary" type="button">Refresh Notifications</button></div>
         </div>
       </div>
     </header>
     <!-- Nav Bar End-->
 
     <!-- Create a donation post-->
-
+    
     <div class="donationPost">
       <div class="col-md-6 offset-md-3 mt-5">
-        <label for="Category">Donation Type: </label>
+        
+
+        <label for="Category">Add a Donation: </label>
         <select
           class="form-select"
           id="selectCateory"
@@ -153,9 +158,9 @@
     <!--toys-->
 
     <div id="Toys" class="container-fluid" style="display: none">
-      <div class="col-md-2" id="ToysInformation">
+      <div class="" id="ToysInformation">
         Type:
-        <input class="form-control is-invalid" type="text" />
+        <input class="" type="text" />
         Category:
         <input id="DonationName" type="text" />
 
@@ -288,7 +293,7 @@
         <a class="btn btn-primary" onclick="addBlood()" role="button">Submit</a>
       </div>
     </div>
-
+    <div class="container-fluid">
     <table class="container-fluid" id="myTable">
       <tr class="header">
         <th style="width: 20%">Donation Name</th>
@@ -297,17 +302,32 @@
         <th style="width: 20%">Quantity</th>
         <th style="width: 20%"></th>
       </tr>
+      <tr>
+        <td>Shirts</td>
+        <td>Clothes</td>
+        <td>
+          <label id="" style="display: block;">posted</label>
+          
+        </td>
+        <td>3</td>
+        <td><a class="btn btn-primary" href="/Web Application/Organization/updatepost.html">Update</a>&nbsp;<a class="btn btn-primary" onclick=" remDone()">Delete</a></td>
+      </tr>
       <tr id="done">
         <td>Dolls</td>
         <td>Toys</td>
         <td>
-          <a href="/Web Application/Organization/Fullfilled.html">Fulfilled</a>
+          <label id="full" style="display: none;"><a href="/Web Application/Organization/Fullfilled.html">Fulfilled</a></label>
+          <label id="pending" style="display: block;">processing</label>
+          
         </td>
         <td>30</td>
-        <td><a class="btn btn-primary" onclick=" remDone()">Delete</a></td>
+        <td><a class="btn btn-secondary" >Update</a>&nbsp;<a class="btn btn-primary" onclick=" remDone()">Delete</a></td>
       </tr>
+
     </table>
+  </div>
     <!--End of donation post -->
+    
 
     <script src="organization.js"></script>
     <script

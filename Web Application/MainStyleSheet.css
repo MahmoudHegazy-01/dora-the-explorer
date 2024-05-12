@@ -21,3 +21,8 @@ body {
 .card-registration .select-arrow {
   top: 13px;
 }
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
