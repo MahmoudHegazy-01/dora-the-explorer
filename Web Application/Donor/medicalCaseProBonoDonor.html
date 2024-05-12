@@ -16,97 +16,103 @@
     <body>
         <!--Nav Bar-->
         <header>
-            <div class="px-3 py-2 text-bg-dark border-bottom">
-              <div class="container">
-                <div
-                  class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+          <div class="px-3 py-2 text-bg-dark border-bottom">
+            <div class="container">
+              <div
+                class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+              >
+                <a
+                  href="/"
+                  class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
                 >
-                  <a
-                    href="/"
-                    class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
+                  <svg
+                    class="bi me-2"
+                    width="40"
+                    height="32"
+                    role="img"
+                    aria-label="Bootstrap"
                   >
-                    <svg
-                      class="bi me-2"
-                      width="40"
-                      height="32"
-                      role="img"
-                      aria-label="Bootstrap"
+                    <use xlink:href="#bootstrap"></use>
+                  </svg>
+                </a>
+  
+                <ul
+                  class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
+                >
+                  <li>
+                    <a href="donorMainPage.html" class="nav-link text-white" onClick="home()">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                        <use xlink:href="#home"></use>
+                      </svg>
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="viewOrganizationList.html"
+                      class="nav-link text-white"
+                      onClick="assignNumber1();handleClick(event);"
                     >
-                      <use xlink:href="#bootstrap"></use>
-                    </svg>
-                  </a>
-    
-                  <ul
-                    class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
-                  >
-                    <li>
-                      <a href="#" class="nav-link text-secondary" onClick="home()">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                          <use xlink:href="#home"></use>
-                        </svg>
-                        Home
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="nav-link text-white"
-                        onClick="assignNumber1();handleClick(event);"
-                      >
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                          <use xlink:href="#speedometer2"></use>
-                        </svg>
-                        Lists
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="nav-link text-white"
-                        onClick="assignNumber2();handleClick(event);"
-                      >
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                          <use xlink:href="#table"></use>
-                        </svg>
-                        Submissions
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="nav-link text-white"
-                        onClick="assignNumber3();handleClick(event);"
-                      >
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                        <use xlink:href="#speedometer2"></use>
+                      </svg>
+                      Organization Lists
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="donorDeliveries.html"
+                      class="nav-link text-white"
+                      onClick="assignNumber2();handleClick(event);"
+                    >
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                        <use xlink:href="#table"></use>
+                      </svg>
+                      Deliveries
+                    </a>
+                  </li>
+                  <li>
+                    <li  class="nav-item dropdown">
+                      <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                         <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                           <use xlink:href="#grid"></use>
                         </svg>
-                        Requests
+                        Notifications
                       </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li>
+                            <label >No Notifications yet</label>
+                          </li>
+                      </ul>
                     </li>
-                    <li>
-                      <li  class="nav-item dropdown">
-                        <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                          <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                            <use xlink:href="#grid"></use>
-                          </svg>
-                          Profile
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">Settings</a></li>
-                          <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
-                        </ul>
-                      </li>
-                        
+                  </li>
+                  <li>
+                    <li  class="nav-item dropdown">
+                      <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                          <use xlink:href="#grid"></use>
+                        </svg>
+                        Profile
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="donorProfile.html">Settings</a></li>
+                        <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
+                      </ul>
+                    </li>
                       
-                    </li>
-                  </ul>
-                </div>
+                    
+                  </li>
+                </ul>
               </div>
             </div>
-          </header>
+          </div>
+        </header>
           <!-- GO back button-->
-         <a href="donorMainPage.html"><button>Go Back</button> </a>
+         <a href="donorMainPage.html"><button class="btn btn-light">Go Back</button> </a>
          <!--Donation Details-->
+         <div class="container">
+          <div class="row">
+            <div class="col-md-2">
          <p>
             <ul >
                 <li style="padding-bottom: 1%;">
@@ -135,11 +141,34 @@
                 </li>
             </ul>
           </p>
+        </div>
+        <!--GOOGLE MAPS-->
+       
+        <div id="googleMap" style="width: 50%;height:400px;"></div>
+       </div>
+     </div>
           <!-- Quantity Selection-->
           <br>
           <p style="color: red; text-align: center;"> ONLY FOR VERIFIED DOCTORS</p>
 
            <!--END-->
+
+           <script>
+            function myMap() {
+            var test= {lat: 29.99744606527095, lng: 30.967435833104524};
+            var mapProp= {
+              center:new google.maps.LatLng(29.99744606527095, 30.967435833104524),
+              zoom:15,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            
+            var marker = new google.maps.Marker({ 
+              position: test, 
+              map: map 
+                 });
+            }
+            </script> 
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlVP0YvsSz5M7e_Rf_xeb0LCQF7qIMuxs&callback=myMap"></script> 
            <script src="script.js"></script>
            <script src = "donorMainPageScript.js"></script>
            <script

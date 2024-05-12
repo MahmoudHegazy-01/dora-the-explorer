@@ -109,38 +109,68 @@
         </header>
           <!-- GO back button-->
          <a href="donorMainPage.html"><button>Go Back</button> </a>
-         <br>
-         <br>
          <!--Donation Details-->
-         <img src="Lego.jpg" style="width: 600px;;height: 350px;">
+         <div class="container">
+          <div class="row">
+            <div class="col-md-2">
          <p>
             <ul >
                 <li style="padding-bottom: 1%;">
-                    Type : Building Block Toy
+                   Patient Name : Jack
                 </li>
                 <li style="padding-bottom: 1%;">
-                    Age : 6-8 years
+                    Age : 40 years
                 </li>
                 <li style="padding-bottom: 1%;"> 
-                    Gender : unisex
+                    Gender : Male
                 </li>
-                <li style="padding-bottom: 1%;">
-                    Category : board game
+                <li style="padding-bottom: 1%;"> 
+                    Weight : 90 Kg
                 </li>
-                <li>
-                    Quantity : 10 pcs
+                <li style="padding-bottom: 1%;"> 
+                    Address : 26th of July Corridor
+                </li>
+                <li style="padding-bottom: 1%;"> 
+                    Organization name : Dar el Fouad
+                </li>
+                <li style="padding-bottom: 1%;"> 
+                    Medical Specialty : Cardiology
+                </li>
+                <li style="padding-bottom: 1%;"> 
+                    Case Description : Irregular Heart beats, Slight dizziness
                 </li>
             </ul>
           </p>
+        </div>
+        <!--GOOGLE MAPS-->
+       
+        <div id="googleMap" style="width: 50%;height:400px;"></div>
+       </div>
+     </div>
           <!-- Quantity Selection-->
-          <label for="Quantity">Quantity :</label>
-          <input type="number" id="Quantity">
           <br>
-          <button id="Donate" onclick="checkDonation()">
-            Donate
+          <button id="Donate" class="btn btn-light" onclick="fullFillCase()" style="align-items: center;">
+            Fullfill Case
           </button>
 
            <!--END-->
+
+           <script>
+            function myMap() {
+            var test= {lat: 29.99744606527095, lng: 30.967435833104524};
+            var mapProp= {
+              center:new google.maps.LatLng(29.99744606527095, 30.967435833104524),
+              zoom:15,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            
+            var marker = new google.maps.Marker({ 
+              position: test, 
+              map: map 
+                 });
+            }
+            </script> 
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlVP0YvsSz5M7e_Rf_xeb0LCQF7qIMuxs&callback=myMap"></script> 
            <script src="script.js"></script>
            <script src = "donorMainPageScript.js"></script>
            <script
