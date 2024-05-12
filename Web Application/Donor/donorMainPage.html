@@ -40,7 +40,7 @@
                 class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
               >
                 <li>
-                  <a href="#" class="nav-link text-white" onClick="home()">
+                  <a href="donorMainPage.html" class="nav-link text-white" onClick="home()">
                     <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                       <use xlink:href="#home"></use>
                     </svg>
@@ -49,7 +49,7 @@
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="viewOrganizationList.html"
                     class="nav-link text-white"
                     onClick="assignNumber1();handleClick(event);"
                   >
@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="donorDeliveries.html"
                     class="nav-link text-white"
                     onClick="assignNumber2();handleClick(event);"
                   >
@@ -80,6 +80,9 @@
                       Notifications
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                          <label >No Notifications yet</label>
+                        </li>
                     </ul>
                   </li>
                 </li>
@@ -92,7 +95,7 @@
                       Profile
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Settings</a></li>
+                      <li><a class="dropdown-item" href="donorProfile.html">Settings</a></li>
                       <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
                     </ul>
                   </li>
@@ -206,23 +209,6 @@
             </tr>
 
           </table>
-
-          <!--Pagination-->
-          <nav aria-label="...">
-            <ul class="pagination">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item active" aria-current="page">
-                <a class="page-link" href="#">2</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
-          </nav>
           <!--END-->
           <script src="script.js"></script>
           <script src = "donorMainPageScript.js"></script>

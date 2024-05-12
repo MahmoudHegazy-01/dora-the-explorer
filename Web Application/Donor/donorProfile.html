@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ORGANIZATION</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/Web Application/MainStyleSheet.css" />
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <header>
+        <div class="px-3 py-2 text-bg-dark border-bottom">
+          <div class="container">
+            <div
+              class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+            >
+              <a
+                href="/"
+                class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
+              >
+                <svg
+                  class="bi me-2"
+                  width="40"
+                  height="32"
+                  role="img"
+                  aria-label="Bootstrap"
+                >
+                  <use xlink:href="#bootstrap"></use>
+                </svg>
+              </a>
+
+              <ul
+                class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
+              >
+                <li>
+                  <a href="donorMainPage.html" class="nav-link text-white" onClick="home()">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                      <use xlink:href="#home"></use>
+                    </svg>
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="viewOrganizationList.html"
+                    class="nav-link text-white"
+                    onClick="assignNumber1();handleClick(event);"
+                  >
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                      <use xlink:href="#speedometer2"></use>
+                    </svg>
+                    Organization Lists
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="nav-link text-white"
+                    onClick="assignNumber2();handleClick(event);"
+                  >
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                      <use xlink:href="#table"></use>
+                    </svg>
+                    Deliveries
+                  </a>
+                </li>
+                <li>
+                  <li  class="nav-item dropdown">
+                    <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                        <use xlink:href="#grid"></use>
+                      </svg>
+                      Notifications
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                          <label >No Notifications yet</label>
+                        </li>
+                    </ul>
+                  </li>
+                </li>
+                <li>
+                  <li  class="nav-item dropdown">
+                    <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                        <use xlink:href="#grid"></use>
+                      </svg>
+                      Profile
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">Settings</a></li>
+                      <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
+                    </ul>
+                  </li>
+                    
+                  
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+    <!-- Nav Bar End-->
+
+<div class="container-fluid">
+<div class="row">
+  <div  class="col-md-2"><label>First Name: </label>
+  <Label id="Fname">name@101</Label>
+  <input id="Fname1" type="text"></div>
+  <div class="col-md-2">
+    <button onclick="updValues('Fname1','Fname')" class="btn btn-primary">Update</button>
+    <button onclick="delstuff('Fname')" class="btn btn-primary">Delete</button>
+  </div>
+  <div  class="col-md-2"><label>Last Name: </label>
+    <Label id="Lname">name@101</Label>
+    <input id="Lname1" type="text"></div>
+    <div class="col-md-2">
+      <button onclick="updValues('Lname1','Lname')" class="btn btn-primary">Update</button>
+      <button onclick="delstuff('Lname')" class="btn btn-primary">Delete</button>
+    </div>
+    <div  class="col-md-2"><label>Gender: </label>
+      <Label id="G">Male</Label>
+      <input id="G1" type="text"></div>
+      <div class="col-md-2">
+        <button onclick="updValues('G1','G')" class="btn btn-primary">Update</button>
+        <button onclick="delstuff('G')" class="btn btn-primary">Delete</button>
+      </div>
+</div>
+<br>
+<div class="row">
+  <div  class="col-md-2"><label>Email: </label>
+    <Label id="em">name2002@gmail.com</Label>
+    <input id="em1" type="text"></div>
+    <div class="col-md-2">
+      <button onclick="updValues('em1','em')" class="btn btn-primary">Update</button>
+      <button onclick="delstuff('em')" class="btn btn-primary">Delete</button>
+    </div>
+    <div  class="col-md-2"><label>Password: </label>
+      <Label id="pass">org101</Label>
+      <input id="pass1" type="text"></div>
+      <div class="col-md-2">
+        <button onclick="updValues('pass1','pass')" class="btn btn-primary">Update</button>
+        <button onclick="delstuff('pass')" class="btn btn-primary">Delete</button>
+      </div>
+      <div  class="col-md-2"><label>Contact Number: </label>
+        <Label id="Cnum">200075456</Label>
+        <input id="Cnum1" type="text"></div>
+        <div class="col-md-2">
+          <button onclick="updValues('Cnum1','Cnum')" class="btn btn-primary">Update</button>
+          <button onclick="delstuff('Cnum')" class="btn btn-primary">Delete</button>
+        </div>
+</div>
+<br>
+<div class="row">
+    <div  class="col-md-2"><label>Area: </label>
+        <Label id="Ar">Nasr City</Label>
+        <input id="Ar1" type="text"></div>
+        <div class="col-md-2">
+          <button onclick="updValues('Ar1','Ar')" class="btn btn-primary">Update</button>
+          <button onclick="delstuff('Ar')" class="btn btn-primary">Delete</button>
+        </div>
+        <div  class="col-md-2"><label>Governate: </label>
+          <Label id="Gov">Cairo</Label>
+          <input id="Gov1" type="text"></div>
+          <div class="col-md-2">
+            <button onclick="updValues('Gov1','Gov')" class="btn btn-primary">Update</button>
+            <button onclick="delstuff('Gov')" class="btn btn-primary">Delete</button>
+          </div>
+      <div  class="col-md-2"><label>Address: </label>
+        <Label id="Oadd">balabizo st,Cairo</Label>
+        <input id="Oadd1" type="text"></div>
+        <div class="col-md-2">
+          <button onclick="updValues('Oadd1','Oadd')" class="btn btn-primary">Update</button>
+          <button onclick="delstuff('Oadd')" class="btn btn-primary">Delete</button>
+        </div>
+</div>
+<br>
+
+<br>
+<div class="row">
+  
+</div>
+</div>
+
+
+    <script src="/Web Application/Organization/organization.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
