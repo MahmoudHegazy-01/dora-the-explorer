@@ -1,10 +1,10 @@
 body {
-    color: blue;
+    color: #323e42;
     text-shadow: 50px;
-    align-content: center;
-    align-items: center;
-    background-color: #fae8e0;
-}
+  
+    background-color: #efdcf9;
+    margin: 0;
+  }
 
 .w-220px {
     width: 220px;
