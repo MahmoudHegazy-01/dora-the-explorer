@@ -63,6 +63,9 @@
                   Notifications
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li id = "Notifying">
+                    <label>No Notifications Yet</label>
+                  </li>
                 </ul>
               </li>
             </li>
@@ -111,6 +114,8 @@
             />
           </form>
           <br />
+          <br>
+          <div class=""> <button onclick="notification()" class="btn btn-primary" type="button">Refresh Notifications</button></div>
         </div>
       </div>
     </header>
@@ -134,34 +139,51 @@
 
   <div class="pickup-info">
     
-    <h3>Your driver will arrive after <span id="eta" data-min="10" data-max="30">00</span> minutes</h3>
+    <h3>Your driver will arrive after <span id="eta" data-min="1" data-max="1">01</span> minute</h3>
+    
 <script>
-  // Get the minimum and maximum time from data attributes (in minutes)
+  // Get the minimum and maximum time from data attributes (set to 1 minute)
   const minTime = parseInt(document.getElementById("eta").dataset.min);
   const maxTime = parseInt(document.getElementById("eta").dataset.max);
 
-  // Generate a random initial time within the range (in minutes)
-  let remainingTime = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
+  // Set the initial remaining time to 1 minute
+  let remainingTime = minTime;
 
   // Update the displayed time (with minutes)
   document.getElementById("eta").textContent = remainingTime.toString().padStart(2, "0");
 
-  // Function to update the timer (decrements in minutes)
+  // Function to update the timer (decrements in seconds)
   function updateTimer() {
     remainingTime--;
-    document.getElementById("eta").textContent = remainingTime.toString().padStart(2, "0");
+
+    // Update displayed time with minutes and seconds (formatted)
+    const minutes = Math.floor(remainingTime / 60).toString().padStart(2, '0');
+    const seconds = (remainingTime % 60).toString().padStart(2, '0');
+    document.getElementById("eta").textContent = `${minutes}:${seconds}`;
 
     // Stop the timer and show alert when it reaches zero
     if (remainingTime === 0) {
-      clearInterval(intervalId);
-      alert("Your driver has arrived!");
-      window.location.href = "donorMainPage.html";
-    }
+    clearInterval(intervalId);
+
+    function notification() {
+      var notif = document.getElementById("Notifying");
+      var mainNotif = document.getElementById("navbarDropdownMenuLink");
+      var full = document.getElementById("full");
+      var pend = document.getElementById("pending");
+      pend.style.display = "none";
+      full.style.display = "block";
+      mainNotif.style.color = "#FF0000";
+      mainNotif.className = "nav-link dropdown-toggle";
+      notif.textContent = "Your Driver Has Arrived";
+}
+    window.location.href="donorMainPage.html"
+  }
   }
 
-  // Start the timer with an interval of 60 seconds (1 minute)
+  // Start the timer with an interval of 1 second for smoother updates
   const intervalId = setInterval(updateTimer, 60000);
 </script>
+
 
     <p>Your <span id="selectedTransport"></span> is scheduled to arrive in <span id="pickupTime"></span>. Please ensure you're available at the pickup location.</p>
     <script>
