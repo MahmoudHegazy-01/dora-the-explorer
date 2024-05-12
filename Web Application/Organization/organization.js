@@ -73,6 +73,9 @@ function addClothes() {
   var deleteButton = document.createElement("button");
   deleteButton.className = "btn btn-primary";
   deleteButton.textContent = "Delete";
+  var updateButton = document.createElement("button");
+  updateButton.className = "btn btn-secondary";
+  updateButton.textContent = "Update";
 
   // Add event listener to delete button
   deleteButton.addEventListener("click", function () {
@@ -95,6 +98,8 @@ function addClothes() {
     cell2.innerHTML = document.getElementById("selectCateory").value;
     cell3.innerHTML = "pending";
     cell4.innerHTML = document.getElementById("clotheQuantity").value;
+    cell5.appendChild(updateButton);
+    cell5.innerHTML += "&nbsp";
     cell5.appendChild(deleteButton);
 
     alert("Donation Added");
@@ -116,6 +121,9 @@ function addToys() {
   var deleteButton = document.createElement("button");
   deleteButton.className = "btn btn-primary";
   deleteButton.textContent = "Delete";
+  var updateButton = document.createElement("button");
+  updateButton.className = "btn btn-secondary";
+  updateButton.textContent = "Update";
 
   // Add event listener to delete button
   deleteButton.addEventListener("click", function () {
@@ -138,8 +146,10 @@ function addToys() {
     cell2.innerHTML = document.getElementById("selectCateory").value;
     cell3.innerHTML = "pending";
     cell4.innerHTML = document.getElementById("toysQuantity").value;
-
+    cell5.appendChild(updateButton);
+    cell5.innerHTML += "&nbsp";
     cell5.appendChild(deleteButton);
+    alert("Donation Added");
   }
 }
 
@@ -160,6 +170,9 @@ function addFood() {
   deleteButton.className = "btn btn-primary";
   deleteButton.textContent = "Delete";
 
+  var updateButton = document.createElement("button");
+  updateButton.className = "btn btn-secondary";
+  updateButton.textContent = "Update";
   // Add event listener to delete button
   deleteButton.addEventListener("click", function () {
     var rowIndex = row.rowIndex;
@@ -186,8 +199,10 @@ function addFood() {
       document.getElementById("FoodQuantity").value +
       "" +
       document.getElementById("foodUnit").value;
-
+    cell5.appendChild(updateButton);
+    cell5.innerHTML += "&nbsp";
     cell5.appendChild(deleteButton);
+    alert("Donation Added");
   }
 }
 function addSupplies() {
@@ -207,6 +222,9 @@ function addSupplies() {
   deleteButton.className = "btn btn-primary";
   deleteButton.textContent = "Delete";
 
+  var updateButton = document.createElement("button");
+  updateButton.className = "btn btn-secondary";
+  updateButton.textContent = "Update";
   // Add event listener to delete button
   deleteButton.addEventListener("click", function () {
     var rowIndex = row.rowIndex;
@@ -228,8 +246,10 @@ function addSupplies() {
     cell2.innerHTML = document.getElementById("selectCateory").value;
     cell3.innerHTML = "pending";
     cell4.innerHTML = document.getElementById("SuppliesQuantity").value;
-
+    cell5.appendChild(updateButton);
+    cell5.innerHTML += "&nbsp";
     cell5.appendChild(deleteButton);
+    alert("Donation Added");
   }
 }
 
@@ -249,6 +269,10 @@ function addSchool() {
   var deleteButton = document.createElement("button");
   deleteButton.className = "btn btn-primary";
   deleteButton.textContent = "Delete";
+
+  var updateButton = document.createElement("button");
+  updateButton.className = "btn btn-secondary";
+  updateButton.textContent = "Update";
 
   // Add event listener to delete button
   deleteButton.addEventListener("click", function () {
@@ -271,8 +295,10 @@ function addSchool() {
     cell2.innerHTML = document.getElementById("selectCateory").value;
     cell3.innerHTML = "pending";
     cell4.innerHTML = document.getElementById("SchoolQuantity").value;
-
+    cell5.appendChild(updateButton);
+    cell5.innerHTML += "&nbsp";
     cell5.appendChild(deleteButton);
+    alert("Donation Added");
   }
 }
 function addBlood() {
@@ -292,6 +318,9 @@ function addBlood() {
   deleteButton.className = "btn btn-primary";
   deleteButton.textContent = "Delete";
 
+  var updateButton = document.createElement("button");
+  updateButton.className = "btn btn-secondary";
+  updateButton.textContent = "Update";
   // Add event listener to delete button
   deleteButton.addEventListener("click", function () {
     var rowIndex = row.rowIndex;
@@ -312,8 +341,10 @@ function addBlood() {
     cell2.innerHTML = document.getElementById("selectCateory").value;
     cell3.innerHTML = "pending";
     cell4.innerHTML = document.getElementById("BloodQuantity").value;
-
+    cell5.appendChild(updateButton);
+    cell5.innerHTML += "&nbsp";
     cell5.appendChild(deleteButton);
+    alert("Donation Added");
   }
 }
 
@@ -332,9 +363,29 @@ function notification() {
   full.style.display = "block";
   mainNotif.style.color = "#FF0000";
   mainNotif.className = "nav-link dropdown-toggle";
-  notif.textContent = "Donation post was fullfilled";
+  notif.textContent = "A Donation Post was fullfilled";
 }
 function defNotif() {
   var mainNotif = document.getElementById("navbarDropdownMenuLink");
   mainNotif.className = "nav-link text-white dropdown-toggle";
+}
+function delstuff(message) {
+  document.getElementById(message).textContent = "";
+}
+
+function updValues(change, changed) {
+  var c = document.getElementById(change);
+  var res = document.getElementById(changed);
+  res.textContent = c.value;
+}
+
+function goBack() {
+  window.history.back();
+}
+
+function schedDelivery() {
+  var sel = document.getElementById("time-dropdown");
+  var la = document.getElementById("tLabel");
+  document.getElementById("times").textContent = sel.value;
+  la.style.display = "block";
 }
