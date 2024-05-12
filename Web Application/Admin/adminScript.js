@@ -440,3 +440,7 @@ function deletetherow(button) {
     row.parentNode.removeChild(row);
     alert("Deleted!");
   }
+
+  function goBack() {
+    window.history.back();
+  }
