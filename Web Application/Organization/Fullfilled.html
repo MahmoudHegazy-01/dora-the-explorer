@@ -15,11 +15,17 @@
   <body>
     <!-- Nav Bar -->
     <header>
+      
       <div class="px-3 py-2 text-bg-dark border-bottom">
+        
         <div class="container">
+          
           <div
             class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
           >
+          <img src="/Web Application/Pics/Logo3.png" alt="DONORA LOGO"
+            width="5%"
+            height="5%">
             <a
               href="/"
               class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
@@ -34,72 +40,64 @@
                 <use xlink:href="#bootstrap"></use>
               </svg>
             </a>
-
+            
             <ul
               class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
             >
-              <li>
-                <a href="#" class="nav-link text-secondary" onClick="home()">
-                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                    <use xlink:href="#home"></use>
-                  </svg>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="nav-link text-white"
-                  onClick="assignNumber1();handleClick(event);"
-                >
-                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                    <use xlink:href="#speedometer2"></use>
-                  </svg>
-                  Lists
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="nav-link text-white"
-                  onClick="assignNumber2();handleClick(event);"
-                >
-                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                    <use xlink:href="#table"></use>
-                  </svg>
-                  Submissions
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="nav-link text-white"
-                  onClick="assignNumber3();handleClick(event);"
-                >
+            <li>
+              <a href="/Web Application/Organization/donate.html" class="nav-link text-white" onClick="home()">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="#home"></use>
+                </svg>
+                Home
+              </a>
+            </li>
+            <li>
+              <li  class="nav-item dropdown">
+                
+                <a  class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                     <use xlink:href="#grid"></use>
                   </svg>
-                  Requests
+                  Notifications
                 </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                </ul>
               </li>
-              <li>
-                <a
-                  href="#"
-                  class="nav-link text-white"
-                  onClick="orgRegistered()"
-                >
+            </li>
+            <li>
+              <li  class="nav-item dropdown">
+                <a  class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                    <use xlink:href="#people-circle"></use>
+                    <use xlink:href="#grid"></use>
                   </svg>
-                  Registered Organizations
+                  Profile
                 </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="/Web Application/Organization/organization.html">Settings</a></li>
+                  <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
+                </ul>
               </li>
+                
+              
+            </li>
             </ul>
           </div>
         </div>
       </div>
+
       <div class="px-3 py-2 border-bottom mb-3">
         <div class="container d-flex flex-wrap justify-content-center">
+          <a onclick="goBack()" >
+            <img
+              src="/Web Application/Pics/back-button.png"
+              width="25"
+              height="25"
+              alt="back button"
+            />
+            <br />
+          </a>
+
           <form
             class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto"
             role="search"
@@ -111,13 +109,7 @@
               aria-label="Search"
             />
           </form>
-
-          <div class="text-end">
-            <button type="button" class="btn btn-light text-dark me-2">
-              Login
-            </button>
-            <button type="button" class="btn btn-primary">Sign-up</button>
-          </div>
+          <br />
         </div>
       </div>
     </header>
@@ -132,7 +124,7 @@
       <br />
       Gender: Girls
       <br />
-      Quantity: 3
+      Quantity: 30
       <br />
       Status:
       <mark>FULLFILLED By <a href="DonorDetails.html">Donor@500</a></mark>

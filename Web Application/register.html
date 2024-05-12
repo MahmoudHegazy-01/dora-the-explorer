@@ -77,6 +77,9 @@
             <input class="form-control" id="governate" placeholder="Governate" type="text" />
           </div>
           <div class="col-md-2">
+            <input class="form-control" id="area" placeholder="Area" type="text" />
+          </div>
+          <div class="col-md-2">
             <input class="form-control" id="password" placeholder="Password" type="text" />
           </div>
         </div>
@@ -114,7 +117,9 @@
           <div class="container mt-5">
             <label class="form-label" for="customFile">Please select a document to show you're qualifications</label>
             <input type="file" class="form-control" id="customFile" />
-        </div>
+          </div>
+          <!-- GOOGLE MAPS-->
+          <div id="googleMap" style="width: 50%;height:400px;"></div>
       </div>
     </div>
     </div>
@@ -139,9 +144,85 @@
       </div>
     </div>
 
-    <button type="button" onclick="check()">Submit</button>
-    <script src="script.js"></script>
+    <div id="organizationRegister" style="display: none">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <input class="form-control" id="orgname" placeholder="Name of the organization" type="text"/>
+          </div>
+          <div class="col-md-3">
+            <input class="form-control" id="orgtype" placeholder="Type of the organization" type="text"/>
+          </div>
+          <div class="col-md-3">
+            <input class="form-control" id="orgaddress" placeholder="Address of the organization" type="text"/>
+          </div>
+          <div class="container mt-5">
+            <label class="form-label" for="customFile">Please select a document for Organization Verification</label>
+            <input type="file" class="form-control" id="customFile" />
+          </div>
+          <!-- GOOGLE MAPS-->
+          <div id="googleMap1" style="width: 50%;height:400px;"></div>
+        </div>
+      </div>
+    </div>
 
+    <button type="button" onclick="check()">Submit</button>
+    
+    
+    
+    <!--END-->    
+    <script>
+      function myMap() 
+    {
+      var test= {lat:30.19756146392604, lng: 31.384294258098855};
+      var mapProp= {
+        center:new google.maps.LatLng(30.19756146392604, 31.384294258098855),
+        zoom:12,
+      };
+      var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      var map2 = new google.maps.Map(document.getElementById("googleMap1"), mapProp);
+
+      var marker = new google.maps.Marker({ 
+        position: test, 
+        map: map 
+           });
+
+        var marker2 = new google.maps.Marker({ 
+        position: test, 
+        map: map2
+           });
+
+           google.maps.event.addListener(map, 'click', function(event) {
+            
+            marker =  placeMarker(map, event.latLng, marker);
+             });
+
+          google.maps.event.addListener(map2, 'click', function(event) {
+            
+          marker2 =  placeMarker(map2, event.latLng, marker2);
+           });
+    }
+
+  function placeMarker(map, location, ma) {
+    ma.setMap(null);
+    var marker = new google.maps.Marker({
+    position: location,
+    map: map
+  });
+  var infowindow = new google.maps.InfoWindow({
+    content: 'Latitude: ' + location.lat() +
+    '<br>Longitude: ' + location.lng()
+  });
+  infowindow.open(map,marker);
+  return marker;
+}
+
+
+
+      </script> 
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlVP0YvsSz5M7e_Rf_xeb0LCQF7qIMuxs&callback=myMap"></script>
+
+    <script src="script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

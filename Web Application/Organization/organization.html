@@ -15,11 +15,17 @@
   <body>
     <!-- Nav Bar -->
     <header>
+      
       <div class="px-3 py-2 text-bg-dark border-bottom">
+        
         <div class="container">
+          
           <div
             class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
           >
+          <img src="/Web Application/Pics/Logo3.png" alt="DONORA LOGO"
+            width="5%"
+            height="5%">
             <a
               href="/"
               class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
@@ -34,72 +40,64 @@
                 <use xlink:href="#bootstrap"></use>
               </svg>
             </a>
-
+            
             <ul
               class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
             >
-              <li>
-                <a href="#" class="nav-link text-secondary" onClick="home()">
-                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                    <use xlink:href="#home"></use>
-                  </svg>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="nav-link text-white"
-                  onClick="assignNumber1();handleClick(event);"
-                >
-                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                    <use xlink:href="#speedometer2"></use>
-                  </svg>
-                  Lists
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="nav-link text-white"
-                  onClick="assignNumber2();handleClick(event);"
-                >
-                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                    <use xlink:href="#table"></use>
-                  </svg>
-                  Submissions
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="nav-link text-white"
-                  onClick="assignNumber3();handleClick(event);"
-                >
+            <li>
+              <a href="/Web Application/Organization/donate.html" class="nav-link text-white" onClick="home()">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="#home"></use>
+                </svg>
+                Home
+              </a>
+            </li>
+            <li>
+              <li  class="nav-item dropdown">
+                
+                <a  class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                     <use xlink:href="#grid"></use>
                   </svg>
-                  Requests
+                  Notifications
                 </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                </ul>
               </li>
-              <li>
-                <a
-                  href="#"
-                  class="nav-link text-white"
-                  onClick="orgRegistered()"
-                >
+            </li>
+            <li>
+              <li  class="nav-item dropdown">
+                <a  class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                    <use xlink:href="#people-circle"></use>
+                    <use xlink:href="#grid"></use>
                   </svg>
-                  Registered Organizations
+                  Profile
                 </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="/Web Application/Organization/organization.html">Settings</a></li>
+                  <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
+                </ul>
               </li>
+                
+              
+            </li>
             </ul>
           </div>
         </div>
       </div>
+
       <div class="px-3 py-2 border-bottom mb-3">
         <div class="container d-flex flex-wrap justify-content-center">
+          <a onclick="goBack()" >
+            <img
+              src="/Web Application/Pics/back-button.png"
+              width="25"
+              height="25"
+              alt="back button"
+            />
+            <br />
+          </a>
+
           <form
             class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto"
             role="search"
@@ -111,60 +109,110 @@
               aria-label="Search"
             />
           </form>
-
-          <div class="text-end">
-            <button type="button" class="btn btn-light text-dark me-2">
-              Login
-            </button>
-            <button type="button" class="btn btn-primary">Sign-up</button>
-          </div>
+          <br />
         </div>
       </div>
     </header>
-    <!-- Nav Bar End -->
-    <!-- Create Donation-->
-    <a class="btn btn-primary" href="donate.html" role="button"
-      >Add A Donation</a
-    >
-    <!-- Create Donation End-->
-    <!-- Donation Details-->
-    <table id="myTable">
-      <tr class="header">
-        <th style="width: 23%">Organization Name</th>
-        <th style="width: 22%">Category</th>
-        <th style="width: 23%">Filter</th>
-        <th style="width: 22%">Items</th>
-      </tr>
-      <tr>
-        <td>Charity 1</td>
-        <td>Toys</td>
-        <td>2-4 years, male, winter</td>
-        <td>Lego</td>
-        <td><a href="#">View Details </a></td>
-      </tr>
-      <tr>
-        <td>Charity 2</td>
-        <td>School Supplies</td>
-        <td>Books</td>
-        <td>Wizard of Oz</td>
-        <td><a href="#">View Details </a></td>
-      </tr>
-      <tr>
-        <td>Island Trading</td>
-        <td>Clothes</td>
-        <td>10-13 years, male, winter</td>
-        <td>Jacket,Pullover</td>
-        <td><a href="#">View Details </a></td>
-      </tr>
-      <tr>
-        <td>Hello world</td>
-        <td>School supplies</td>
-        <td>Stationary items</td>
-        <td>Pencils,Pens</td>
-        <td><a href="#">View Details </a></td>
-      </tr>
-    </table>
-    <!-- Donation Details End-->
+    <!-- Nav Bar End-->
+
+<div class="container-fluid">
+<div class="row">
+  <div  class="col-md-2"><label>First Name: </label>
+  <Label id="Fname">name@101</Label>
+  <input id="Fname1" type="text"></div>
+  <div class="col-md-2">
+    <button onclick="updValues('Fname1','Fname')" class="btn btn-primary">Update</button>
+    <button onclick="delstuff('Fname')" class="btn btn-primary">Delete</button>
+  </div>
+  <div  class="col-md-2"><label>Last Name: </label>
+    <Label id="Lname">name@101</Label>
+    <input id="Lname1" type="text"></div>
+    <div class="col-md-2">
+      <button onclick="updValues('Lname1','Lname')" class="btn btn-primary">Update</button>
+      <button onclick="delstuff('Lname')" class="btn btn-primary">Delete</button>
+    </div>
+    <div  class="col-md-2"><label>Gender: </label>
+      <Label id="G">Male</Label>
+      <input id="G1" type="text"></div>
+      <div class="col-md-2">
+        <button onclick="updValues('G1','G')" class="btn btn-primary">Update</button>
+        <button onclick="delstuff('G')" class="btn btn-primary">Delete</button>
+      </div>
+</div>
+<br>
+<div class="row">
+  <div  class="col-md-2"><label>Email: </label>
+    <Label id="em">name2002@gmail.com</Label>
+    <input id="em1" type="text"></div>
+    <div class="col-md-2">
+      <button onclick="updValues('em1','em')" class="btn btn-primary">Update</button>
+      <button onclick="delstuff('em')" class="btn btn-primary">Delete</button>
+    </div>
+    <div  class="col-md-2"><label>Password: </label>
+      <Label id="pass">org101</Label>
+      <input id="pass1" type="text"></div>
+      <div class="col-md-2">
+        <button onclick="updValues('pass1','pass')" class="btn btn-primary">Update</button>
+        <button onclick="delstuff('pass')" class="btn btn-primary">Delete</button>
+      </div>
+      <div  class="col-md-2"><label>Contact Number: </label>
+        <Label id="Cnum">200075456</Label>
+        <input id="Cnum1" type="text"></div>
+        <div class="col-md-2">
+          <button onclick="updValues('Cnum1','Cnum')" class="btn btn-primary">Update</button>
+          <button onclick="delstuff('Cnum')" class="btn btn-primary">Delete</button>
+        </div>
+</div>
+<br>
+<div class="row">
+  <div  class="col-md-2"><label>Org Name: </label>
+    <Label id="Oname">DONORA</Label>
+    <input id="Oname1" type="text"></div>
+    <div class="col-md-2">
+      <button onclick="updValues('Oname1','Oname')" class="btn btn-primary">Update</button>
+      <button onclick="delstuff('Oname')" class="btn btn-primary">Delete</button>
+    </div>
+    <div  class="col-md-2"><label>Org Type: </label>
+      <Label id="Otype">Orphanage</Label>
+      <input id="Otype1" type="text"></div>
+      <div class="col-md-2">
+        <button onclick="updValues('Otype1','Otype')" class="btn btn-primary">Update</button>
+        <button onclick="delstuff('Otype')" class="btn btn-primary">Delete</button>
+      </div>
+      <div  class="col-md-2"><label>Org Address: </label>
+        <Label id="Oadd">balabizo st,Cairo</Label>
+        <input id="Oadd1" type="text"></div>
+        <div class="col-md-2">
+          <button onclick="updValues('Oadd1','Oadd')" class="btn btn-primary">Update</button>
+          <button onclick="delstuff('Oadd')" class="btn btn-primary">Delete</button>
+        </div>
+</div>
+<br>
+<div class="row">
+  <div  class="col-md-2"><label>Area: </label>
+    <Label id="Ar">Nasr City</Label>
+    <input id="Ar1" type="text"></div>
+    <div class="col-md-2">
+      <button onclick="updValues('Ar1','Ar')" class="btn btn-primary">Update</button>
+      <button onclick="delstuff('Ar')" class="btn btn-primary">Delete</button>
+    </div>
+    <div  class="col-md-2"><label>Governate: </label>
+      <Label id="Gov">Orphanage</Label>
+      <input id="Gov1" type="text"></div>
+      <div class="col-md-2">
+        <button onclick="updValues('Gov1','Gov')" class="btn btn-primary">Update</button>
+        <button onclick="delstuff('Gov')" class="btn btn-primary">Delete</button>
+      </div>
+      
+</div>
+
+<br>
+<div class="row">
+  
+</div>
+</div>
+
+
     <script src="organization.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
