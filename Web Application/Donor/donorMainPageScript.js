@@ -280,3 +280,5 @@ function checkDonation()
 
   
 }
+
+//initializes google map

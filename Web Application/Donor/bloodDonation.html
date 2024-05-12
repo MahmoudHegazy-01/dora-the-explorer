@@ -107,28 +107,37 @@
           <!-- GO back button-->
          <a  href="donorMainPage.html"><button>Go Back</button> </a>
          <!--Donation Details-->
-         <p>
-            <ul >
-                <li style="padding-bottom: 1%;">
-                    Name of Patient : Kate
-                </li>
-                <li style="padding-bottom: 1%;">
-                    Blood type : O-
-                </li>
-                <li style="padding-bottom: 1%;"> 
-                    Hospital Name : Dar el Fouad Hospital
-                </li>
-                <li style="padding-bottom: 1%;">
-                    Area : Ain shams
-                </li>
-                <li style="padding-bottom: 1%;">
-                    Governorate : Cairo
-                </li>
-                <li style="padding-bottom: 1%;">
-                    Address : Ain shams Sharkeya
-                </li>
-            </ul>
-          </p>
+         <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+              <p>
+                <ul >
+                    <li style="padding-bottom: 1%;">
+                        Name of Patient : Kate
+                    </li>
+                    <li style="padding-bottom: 1%;">
+                        Blood type : O-
+                    </li>
+                    <li style="padding-bottom: 1%;"> 
+                        Hospital Name : Dar el Fouad Hospital
+                    </li>
+                    <li style="padding-bottom: 1%;">
+                        Area : Ain shams
+                    </li>
+                    <li style="padding-bottom: 1%;">
+                        Governorate : Cairo
+                    </li>
+                    <li style="padding-bottom: 1%;">
+                        Address : Ain shams Sharkeya
+                    </li>
+                </ul>
+              </p>
+            </div>
+           <!--GOOGLE MAPS-->
+          
+           <div id="googleMap" style="width: 50%;height:400px;"></div>
+          </div>
+        </div>
           <!-- Quantity Selection-->
           <br>
           <button id="Donate" onclick="checkDonation()">
@@ -136,6 +145,23 @@
           </button>
 
            <!--END-->
+
+           <script>
+            function myMap() {
+            var test= {lat: 29.99744606527095, lng: 30.967435833104524};
+            var mapProp= {
+              center:new google.maps.LatLng(29.99744606527095, 30.967435833104524),
+              zoom:15,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            
+            var marker = new google.maps.Marker({ 
+              position: test, 
+              map: map 
+                 });
+            }
+            </script> 
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlVP0YvsSz5M7e_Rf_xeb0LCQF7qIMuxs&callback=myMap"></script>            
            <script src="script.js"></script>
            <script src = "donorMainPageScript.js"></script>
            <script
