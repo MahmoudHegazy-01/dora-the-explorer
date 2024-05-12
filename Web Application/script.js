@@ -45,7 +45,7 @@ function checkRegister() {
   }
   if (register === "Organization") {
     common.style.display = "block";
-    org.style.display = "block";
+    org.style.display = "block"; 
   }
 }
 
@@ -390,3 +390,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+
+function changeMarkerPosition(marker) {
+  var latlng = new google.maps.LatLng(40.748774, -73.985763);
+  marker.setPosition(latlng);
+}
