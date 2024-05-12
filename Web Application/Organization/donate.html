@@ -55,7 +55,7 @@
             <li>
               <li  class="nav-item dropdown">
                 
-                <a  class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                <a  class="nav-link text-white dropdown-toggle" onclick="defNotif()" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                     <use xlink:href="#grid"></use>
                   </svg>
@@ -78,7 +78,7 @@
                   Profile
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><a class="dropdown-item" href="/Web Application/Organization/organization.html">Settings</a></li>
                   <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
                 </ul>
               </li>
@@ -114,6 +114,8 @@
             />
           </form>
           <br />
+
+          <div class=""> <button onclick="notification()" class="btn btn-primary" type="button">Refresh Notifications</button></div>
         </div>
       </div>
     </header>
@@ -301,7 +303,9 @@
         <td>Dolls</td>
         <td>Toys</td>
         <td>
-          <a href="/Web Application/Organization/Fullfilled.html">Fulfilled</a>
+          <label id="full" style="display: none;"><a href="/Web Application/Organization/Fullfilled.html">Fulfilled</a></label>
+          <label id="pending" style="display: block;">pending</label>
+          
         </td>
         <td>30</td>
         <td><a class="btn btn-primary" onclick=" remDone()">Delete</a></td>

@@ -326,7 +326,15 @@ function remDone() {
 function notification() {
   var notif = document.getElementById("Notif2");
   var mainNotif = document.getElementById("navbarDropdownMenuLink");
+  var full = document.getElementById("full");
+  var pend = document.getElementById("pending");
+  pend.style.display = "none";
+  full.style.display = "block";
   mainNotif.style.color = "#FF0000";
   mainNotif.className = "nav-link dropdown-toggle";
   notif.textContent = "Donation post was fullfilled";
+}
+function defNotif() {
+  var mainNotif = document.getElementById("navbarDropdownMenuLink");
+  mainNotif.className = "nav-link text-white dropdown-toggle";
 }
