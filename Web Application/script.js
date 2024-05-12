@@ -91,7 +91,7 @@ function check() {
   var orgaddress1 = document.getElementById("orgaddress");
   var area1 = document.getElementById("area");
  
- 
+ var flag = true;
   
 if(register === "Donor"){
   if (fname === null || fname === "" || lname === null || lname === "" || gender === "Gender" || email === null || email === "" || contactnumber === null || contactnumber === "" ||governate === null || governate === "" || password === null || password === "" || address === null || address === "" || area === null || area === ""){
@@ -99,48 +99,56 @@ if(register === "Donor"){
   }
   if(fname === null || fname === ""){
     fname1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     fname1.className = "form-control is-valid"
   }
   if(lname === null || lname === ""){
     lname1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     lname1.className = "form-control is-valid"
   }
   if(email === null || email === ""){
     email1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     email1.className = "form-control is-valid"
   }
   if(contactnumber === null || contactnumber === ""){
     contactnumber1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     contactnumber1.className = "form-control is-valid"
   }
   if(governate === null || governate === ""){
     governate1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     governate1.className = "form-control is-valid"
   }
   if(address === null || address === ""){
     address1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     address1.className = "form-control is-valid"
   }
   if(password === null || password === ""){
     password1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     password1.className = "form-control is-valid"
   }
   if(area === null || area === ""){
     area1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     area1.className = "form-control is-valid"
@@ -153,72 +161,84 @@ if(register === "Donor"){
   }
   if(fname === null || fname === ""){
     fname1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     fname1.className = "form-control is-valid"
   }
   if(lname === null || lname === ""){
     lname1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     lname1.className = "form-control is-valid"
   }
   if(email === null || email === ""){
     email1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     email1.className = "form-control is-valid"
   }
   if(contactnumber === null || contactnumber === ""){
     contactnumber1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     contactnumber1.className = "form-control is-valid"
   }
   if(governate === null || governate === ""){
     governate1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     governate1.className = "form-control is-valid"
   }
   if(password === null || password === ""){
     password1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     password1.className = "form-control is-valid"
   }
   if(area === null || area === ""){
     area1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     area1.className = "form-control is-valid"
   }
   if(addressclinic === null || addressclinic === ""){
     addressclinic1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     addressclinic1.className = "form-control is-valid"
   }
   if(areaclinic === null || areaclinic === ""){
     areaclinic1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     areaclinic1.className = "form-control is-valid"
   }
   if(Governateclinic === null || Governateclinic === ""){
     Governateclinic1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     Governateclinic1.className = "form-control is-valid"
   }
   if(speciality === null || speciality === ""){
     speciality1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     speciality1.className = "form-control is-valid"
   }
   if(casesnumb === null || casesnumb === ""){
     casesnumb1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     casesnumb1.className = "form-control is-valid"
@@ -230,60 +250,70 @@ if(register === "Donor"){
   }
   if(fname === null || fname === ""){
     fname1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     fname1.className = "form-control is-valid"
   }
   if(lname === null || lname === ""){
     lname1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     lname1.className = "form-control is-valid"
   }
   if(email === null || email === ""){
     email1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     email1.className = "form-control is-valid"
   }
   if(contactnumber === null || contactnumber === ""){
     contactnumber1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     contactnumber1.className = "form-control is-valid"
   }
   if(governate === null || governate === ""){
     governate1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     governate1.className = "form-control is-valid"
   }
   if(password === null || password === ""){
     password1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     password1.className = "form-control is-valid"
   }
   if(area === null || area === ""){
     area1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     area1.className = "form-control is-valid"
   }
   if(subjects === null || subjects === ""){
     subjects1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     subjects1.className = "form-control is-valid"
   }
   if(numbclasses === null || numbclasses === ""){
     numbclasses1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     numbclasses1.className = "form-control is-valid"
   }
   if(numbstudents === null || numbstudents === ""){
     numbstudents1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     numbstudents1.className = "form-control is-valid"
@@ -296,67 +326,82 @@ if(register === "Organization"){
   }
   if(fname === null || fname === ""){
     fname1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     fname1.className = "form-control is-valid"
   }
   if(lname === null || lname === ""){
     lname1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     lname1.className = "form-control is-valid"
   }
   if(email === null || email === ""){
     email1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     email1.className = "form-control is-valid"
   }
   if(contactnumber === null || contactnumber === ""){
     contactnumber1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     contactnumber1.className = "form-control is-valid"
   }
   if(governate === null || governate === ""){
     governate1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     governate1.className = "form-control is-valid"
   }
   if(password === null || password === ""){
     password1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     password1.className = "form-control is-valid"
   }
   if(area === null || area === ""){
     area1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     area1.className = "form-control is-valid"
   }
   if(orgname === null || orgname === ""){
     orgname1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     orgname1.className = "form-control is-valid"
   }
   if(orgtype === null || orgtype === ""){
     orgtype1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     orgtype1.className = "form-control is-valid"
   }
   if(orgaddress === null || orgaddress === ""){
     orgaddress1.className = "form-control is-invalid"
+    flag = false;
   }
   else{
     orgaddress1.className = "form-control is-valid"
   }
+ 
 }
+console.log(flag);
+  if(flag)
+    {
+      window.location.href = "login.html";
+    }
 
-window.location.href = "login.html";
 }
 document.addEventListener("DOMContentLoaded", function() {
   var uploadButton = document.getElementById('uploadBtn');
