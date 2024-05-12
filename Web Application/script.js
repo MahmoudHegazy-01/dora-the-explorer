@@ -4,15 +4,11 @@ function login() {
   if ((x === "admin") & (y === "admin")) {
     window.location.href = "Admin/admin.html";
   }
-  if ((x === "Donor") & (y === "donor")) {
+  if ((x === "donor") & (y === "donor")) {
     window.location.href = "Donor/donorMainPage.html";
   }
-  if ((x === "Organization") & (y === "organization")) {
-    window.location.href = "Organization/organization.html";
-  }
-  if ((x === "User") & (y === "user")) {
-    window.location.href = "User/user.html";
-  }
+  if ((x === "organization") & (y === "organization")) {
+    window.location.href = "/Web Application/Organization/donate.html";  }
 }
 
 function register() {
