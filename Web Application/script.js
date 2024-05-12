@@ -5,7 +5,7 @@ function login() {
     window.location.href = "Admin/admin.html";
   }
   if ((x === "Donor") & (y === "donor")) {
-    window.location.href = "Donor/donor.html";
+    window.location.href = "Donor/donorMainPage.html";
   }
   if ((x === "Organization") & (y === "organization")) {
     window.location.href = "Organization/organization.html";
@@ -360,6 +360,7 @@ if(register === "Organization"){
   }
 }
 
+window.location.href = "login.html";
 }
 document.addEventListener("DOMContentLoaded", function() {
   var uploadButton = document.getElementById('uploadBtn');
