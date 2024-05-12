@@ -71,12 +71,12 @@ function check() {
   var fname1 = document.getElementById("fname");
   var lname1 = document.getElementById("lname");
   var gender1 = document.getElementById("Gender-Dropdown");
-  var email1 = document.getElementById("email").value;
+  var email1 = document.getElementById("email");
   var contactnumber1 = document.getElementById("contactnumber");
-  var governate1 = document.getElementById("governate").value;
-  var address1 = document.getElementById("address").value;
+  var governate1 = document.getElementById("governate");
+  var address1 = document.getElementById("address");
   var addressclinic1 = document.getElementById("addressclinic");
-  var areaclinic1 = document.getElementById("areaclinic").value;
+  var areaclinic1 = document.getElementById("areaclinic");
   var Governateclinic1 = document.getElementById("Governateclinic");
   var speciality1 = document.getElementById("speciality");
   var casesnumb1 = document.getElementById("casesnumb");
