@@ -410,7 +410,7 @@ function initMap(n) {
 
 function downloadPdf() {
     // Replace "path/to/your/file.pdf" with the actual path to your PDF file
-    var pdfUrl = "D:\MS2.pdf";
+    var pdfUrl = "../PDFs/Certificate.pdf";
     
     // Create an anchor element
     var a = document.createElement("a");
@@ -419,7 +419,7 @@ function downloadPdf() {
     a.href = pdfUrl;
     
     // Set the download attribute to force the file to be downloaded instead of opened
-    a.download = "MS2.pdf"; // You can specify the filename here
+    a.download = "Certificate.pdf"; // You can specify the filename here
     
     // Append the anchor element to the document body
     document.body.appendChild(a);
