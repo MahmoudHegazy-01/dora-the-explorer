@@ -96,7 +96,9 @@ function addClothes() {
     cell3.innerHTML = "pending";
     cell4.innerHTML = document.getElementById("clotheQuantity").value;
     cell5.appendChild(deleteButton);
+
     alert("Donation Added");
+    notification("Donation added succesfully");
   }
 }
 function addToys() {
@@ -320,4 +322,9 @@ function remDone() {
   document
     .getElementById("myTable")
     .deleteRow(document.getElementById("done").rowIndex);
+}
+
+function notification(message) {
+  var notif = document.getElementById("Notif2");
+  notif.textContent = message;
 }
