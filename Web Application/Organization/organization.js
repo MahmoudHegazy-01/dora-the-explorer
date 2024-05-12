@@ -69,6 +69,7 @@ function addClothes() {
   var cell3 = row.insertCell(2);
   var cell4 = row.insertCell(3);
   var cell5 = row.insertCell(4);
+
   var deleteButton = document.createElement("button");
   deleteButton.className = "btn btn-primary";
   deleteButton.textContent = "Delete";
@@ -136,6 +137,7 @@ function addToys() {
     cell2.innerHTML = document.getElementById("selectCateory").value;
     cell3.innerHTML = "pending";
     cell4.innerHTML = document.getElementById("toysQuantity").value;
+
     cell5.appendChild(deleteButton);
   }
 }
@@ -183,6 +185,7 @@ function addFood() {
       document.getElementById("FoodQuantity").value +
       "" +
       document.getElementById("foodUnit").value;
+
     cell5.appendChild(deleteButton);
   }
 }
@@ -224,6 +227,7 @@ function addSupplies() {
     cell2.innerHTML = document.getElementById("selectCateory").value;
     cell3.innerHTML = "pending";
     cell4.innerHTML = document.getElementById("SuppliesQuantity").value;
+
     cell5.appendChild(deleteButton);
   }
 }
@@ -266,6 +270,7 @@ function addSchool() {
     cell2.innerHTML = document.getElementById("selectCateory").value;
     cell3.innerHTML = "pending";
     cell4.innerHTML = document.getElementById("SchoolQuantity").value;
+
     cell5.appendChild(deleteButton);
   }
 }
@@ -306,6 +311,7 @@ function addBlood() {
     cell2.innerHTML = document.getElementById("selectCateory").value;
     cell3.innerHTML = "pending";
     cell4.innerHTML = document.getElementById("BloodQuantity").value;
+
     cell5.appendChild(deleteButton);
   }
 }
