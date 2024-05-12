@@ -15,96 +15,99 @@
   <body>
     <!-- Nav Bar -->
     <header>
-        <div class="px-3 py-2 text-bg-dark border-bottom">
-          <div class="container">
-            <div
-              class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+      <div class="px-3 py-2 text-bg-dark border-bottom">
+        
+        <div class="container">
+          
+          <div
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+          >
+          <img src="../Pics/Logo3.png" alt="DONORA LOGO"
+            width="5%"
+            height="5%">
+            <a
+              href="/"
+              class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
             >
-              <a
-                href="/"
-                class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
+              <svg
+                class="bi me-2"
+                width="40"
+                height="32"
+                role="img"
+                aria-label="Bootstrap"
               >
-                <svg
-                  class="bi me-2"
-                  width="40"
-                  height="32"
-                  role="img"
-                  aria-label="Bootstrap"
-                >
-                  <use xlink:href="#bootstrap"></use>
+                <use xlink:href="#bootstrap"></use>
+              </svg>
+            </a>
+            
+            <ul
+              class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
+            >
+            <li>
+              <a href="/Web Application/Donor/donorMainPage.html" class="nav-link text-white" onClick="home()">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="#home"></use>
                 </svg>
+                Home
               </a>
-
-              <ul
-                class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
-              >
-                <li>
-                  <a href="donorMainPage.html" class="nav-link text-white" onClick="home()">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                      <use xlink:href="#home"></use>
-                    </svg>
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="viewOrganizationList.html"
-                    class="nav-link text-white"
-                    onClick="assignNumber1();handleClick(event);"
-                  >
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                      <use xlink:href="#speedometer2"></use>
-                    </svg>
-                    Organization Lists
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="nav-link text-white"
-                    onClick="assignNumber2();handleClick(event);"
-                  >
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                      <use xlink:href="#table"></use>
-                    </svg>
-                    Deliveries
-                  </a>
-                </li>
+            </li>
+            <li>
+              <a href="/Web Application/Donor/viewOrganizationList.html" class="nav-link text-white" onClick="home()">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="#home"></use>
+                </svg>
+                Organization List
+              </a>
+            
+              <li>
+                <a href="/Web Application/Donor/donorDeliveries.html" class="nav-link text-white" onClick="home()">
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                    <use xlink:href="#home"></use>
+                  </svg>
+                  Deliveries
+                </a>
+              
+              <li>
                 <li>
                   <li  class="nav-item dropdown">
-                    <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                    <a  class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                       <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                         <use xlink:href="#grid"></use>
                       </svg>
                       Notifications
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li>
-                          <label >No Notifications yet</label>
-                        </li>
-                    </ul>
-                  </li>
-                </li>
-                <li>
-                  <li  class="nav-item dropdown">
-                    <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                      <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                        <use xlink:href="#grid"></use>
-                      </svg>
-                      Profile
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Settings</a></li>
-                      <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
+                      
                     </ul>
                   </li>
                     
                   
                 </li>
-              </ul>
-            </div>
+            <li>
+              <li  class="nav-item dropdown">
+                <a  class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                    <use xlink:href="#grid"></use>
+                  </svg>
+                  Profile
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="/Web Application/Donor/donorProfile.html">Settings</a></li>
+                  <li><a class="dropdown-item" href="../login.html">Sign out</a></li>
+                </ul>
+              </li>
+                
+              
+            </li>
+            </ul>
           </div>
         </div>
+      </div>
+
+      <div class="row">&nbsp;</div>
+      <div class="row">&nbsp;</div>
+      <div class="row">&nbsp;</div>
+      
       </header>
     <!-- Nav Bar End-->
 
@@ -133,6 +136,8 @@
       </div>
 </div>
 <br>
+<div class="row">&nbsp;</div>
+<div class="row">&nbsp;</div>
 <div class="row">
   <div  class="col-md-2"><label>Email: </label>
     <Label id="em">name2002@gmail.com</Label>
@@ -157,6 +162,8 @@
         </div>
 </div>
 <br>
+<div class="row">&nbsp;</div>
+<div class="row">&nbsp;</div>
 <div class="row">
     <div  class="col-md-2"><label>Area: </label>
         <Label id="Ar">Nasr City</Label>
