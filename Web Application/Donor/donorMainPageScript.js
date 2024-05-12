@@ -274,9 +274,18 @@ function unHideTable()
 }
 
 //Checks if the quantity is a postive number and then changes the webpage to schedule pickup
-function checkDonation()
+function checkDonation(obj)
 {
-window.location.href = "donortransportation.html";
+ var value = document.getElementById(obj).value;
+ console.log(value);
+if(value == "")
+  {
+  document.getElementById(obj).className = "form-control is-invalid";
+  }
+  else{
+    window.location.href = "donortransportation.html";
+  }
+
 }
 function fullFillCase()
 {
