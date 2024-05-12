@@ -15,11 +15,17 @@
   <body>
     <!-- Nav Bar -->
     <header>
+      
       <div class="px-3 py-2 text-bg-dark border-bottom">
+        
         <div class="container">
+          
           <div
             class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
           >
+          <img src="/Web Application/Pics/Logo3.png" alt="DONORA LOGO"
+            width="5%"
+            height="5%">
             <a
               href="/"
               class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
@@ -34,72 +40,64 @@
                 <use xlink:href="#bootstrap"></use>
               </svg>
             </a>
-
+            
             <ul
               class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
             >
-              <li>
-                <a href="#" class="nav-link text-secondary" onClick="home()">
-                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                    <use xlink:href="#home"></use>
-                  </svg>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="nav-link text-white"
-                  onClick="assignNumber1();handleClick(event);"
-                >
-                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                    <use xlink:href="#speedometer2"></use>
-                  </svg>
-                  Lists
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="nav-link text-white"
-                  onClick="assignNumber2();handleClick(event);"
-                >
-                  <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                    <use xlink:href="#table"></use>
-                  </svg>
-                  Submissions
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="nav-link text-white"
-                  onClick="assignNumber3();handleClick(event);"
-                >
+            <li>
+              <a href="" class="nav-link text-white" onClick="home()">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="#home"></use>
+                </svg>
+                Home
+              </a>
+            </li>
+            <li>
+              <li  class="nav-item dropdown">
+                
+                <a  class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                     <use xlink:href="#grid"></use>
                   </svg>
-                  Requests
+                  Notifications
                 </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                </ul>
               </li>
-              <li>
-                <a
-                  href="#"
-                  class="nav-link text-white"
-                  onClick="orgRegistered()"
-                >
+            </li>
+            <li>
+              <li  class="nav-item dropdown">
+                <a  class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                    <use xlink:href="#people-circle"></use>
+                    <use xlink:href="#grid"></use>
                   </svg>
-                  Registered Organizations
+                  Profile
                 </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><a class="dropdown-item" href="/Web Application/login.html">Sign out</a></li>
+                </ul>
               </li>
+                
+              
+            </li>
             </ul>
           </div>
         </div>
       </div>
+
       <div class="px-3 py-2 border-bottom mb-3">
         <div class="container d-flex flex-wrap justify-content-center">
+          <a href="/Web Application/Organization/organization.html">
+            <img
+              src="/Web Application/Pics/back-button.png"
+              width="25"
+              height="25"
+              alt="back button"
+            />
+            <br />
+          </a>
+
           <form
             class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto"
             role="search"
@@ -111,39 +109,200 @@
               aria-label="Search"
             />
           </form>
-
-          <div class="text-end">
-            <button type="button" class="btn btn-light text-dark me-2">
-              Login
-            </button>
-            <button type="button" class="btn btn-primary">Sign-up</button>
-          </div>
+          <br />
         </div>
       </div>
     </header>
     <!-- Nav Bar End-->
 
     <!-- Create a donation post-->
+
     <div class="donationPost">
       <div class="col-md-6 offset-md-3 mt-5">
-        <label for="Category">Category: </label>
+        <label for="Category">Donation Type: </label>
         <select
           class="form-select"
           id="selectCateory"
           aria-label="Default select example"
-          onchange="checkDonation()"
+          onchange="checkDonation2()"
         >
-          <option selected>Categories</option>
-          <option value="1">Toys</option>
-          <option value="2">Clothes</option>
-          <option value="3">Food</option>
-          <option value="4">Medical Supplies</option>
-          <option value="5">School Supplies</option>
-          <option value="6">Blood Donations</option>
+          <option disabled selected>Donation Type</option>
+          <option value="Toys">Toys</option>
+          <option value="Clothes">Clothes</option>
+          <option value="Food">Food</option>
+          <option value="Medical Supplies">Medical Supplies</option>
+          <option value="School Supplies">School Supplies</option>
+          <option value="Blood Donations">Blood Donations</option>
         </select>
       </div>
     </div>
 
+    <div id="commonDonations" class="container-fluid" style="display: none">
+      <div id="DonoInformation">
+        Donation Type:
+        <mark><label id="selectedCategory"></label></mark>
+        <br />
+        <br />
+      </div>
+    </div>
+
+    <!--toys-->
+
+    <div id="Toys" class="container-fluid" style="display: none">
+      <div class="col-md-2" id="ToysInformation">
+        Type:
+        <input class="form-control is-invalid" type="text" />
+        Category:
+        <input id="DonationName" type="text" />
+
+        Age:
+        <input type="number" />
+        Gender:
+        <input type="text" />
+        <br />
+        <br />
+        Quantity:
+        <input id="toysQuantity" type="number" />
+        <br />
+        <br />
+        <label for="fileInput">Picture:</label>
+        <input
+          type="file"
+          class="form-control-file"
+          id="fileInput"
+          name="file"
+        />
+        <br />
+        <br />
+
+        <a class="btn btn-primary" onclick="addToys()" role="button">Submit</a>
+      </div>
+    </div>
+
+    <!--clothes-->
+
+    <div id="Clothes" class="container-fluid" style="display: none">
+      <div id="ClothesInformation">
+        Type of Clothing:
+        <input id="clothType" type="text" />
+        Age:
+        <input type="number" />
+        Gender:
+        <input type="text" />
+        Season:
+        <input type="text" />
+        <br />
+        <br />
+        Material:
+        <input type="text" />
+
+        Quantity:
+        <input id="clotheQuantity" type="number" />
+        <br />
+        <br />
+        <a class="btn btn-primary" onclick="addClothes()" role="button"
+          >Submit</a
+        >
+      </div>
+    </div>
+    <!--food-->
+
+    <div id="Food" class="container-fluid" style="display: none">
+      <div id="FoodInformation">
+        Food Name:
+        <input id="foodType" type="text" />
+        <br />
+        <br />
+        Quantity:
+        <input id="FoodQuantity" type="number" />
+        <input id="foodUnit" placeholder="Unit" type="text" />
+        <br />
+        <br />
+        <a class="btn btn-primary" onclick="addFood()" role="button">Submit</a>
+      </div>
+    </div>
+
+    <!--Medical Supplies-->
+    <div id="Medical Supplies" class="container-fluid" style="display: none">
+      <div id="SuppliesInformation">
+        Device Type:
+        <input id="SuppliesType" type="text" />
+        Use:
+        <input type="text" />
+        <br />
+        <br />
+        Quantity:
+        <input id="SuppliesQuantity" type="number" />
+        <br />
+        <br />
+        <label for="fileInput">Picture:</label>
+        <input
+          type="file"
+          class="form-control-file"
+          id="fileInput"
+          name="file"
+        />
+        <br />
+        <br />
+
+        <a class="btn btn-primary" onclick="addSupplies()" role="button"
+          >Submit</a
+        >
+      </div>
+    </div>
+
+    <!--School Supplies-->
+    <div id="School" class="container-fluid" style="display: none">
+      <div id="SchoolInformation">
+        Stationary Type:
+        <input id="SchoolType" type="text" />
+
+        Quantity:
+        <input id="SchoolQuantity" type="number" />
+
+        <br />
+        <br />
+        <a class="btn btn-primary" onclick="addSchool()" role="button"
+          >Submit</a
+        >
+      </div>
+    </div>
+
+    <!--Blood Donations-->
+    <div id="Blood Donations" class="container-fluid" style="display: none">
+      <div id="BloodInformation">
+        Patient Name:
+        <input type="text" />
+        Blood Type:
+        <input id="BloodType" type="text" />
+
+        Quantity:
+        <input id="BloodQuantity" type="number" />
+
+        <br />
+        <br />
+        <a class="btn btn-primary" onclick="addBlood()" role="button">Submit</a>
+      </div>
+    </div>
+
+    <table class="container-fluid" id="myTable">
+      <tr class="header">
+        <th style="width: 23%">Donation Name</th>
+        <th style="width: 22%">Donation Type</th>
+        <th style="width: 23%">Status</th>
+        <th style="width: 22%">Quantity</th>
+        <th style="width: 23%"></th>
+      </tr>
+      <tr id="done">
+        <td>Dolls</td>
+        <td>Toys</td>
+        <td>
+          <a href="/Web Application/Organization/Fullfilled.html">Fulfilled</a>
+        </td>
+        <td>30</td>
+        <td><a class="btn btn-primary" onclick=" remDone()">Delete</a></td>
+      </tr>
+    </table>
     <!--End of donation post -->
 
     <script src="organization.js"></script>

@@ -146,3 +146,88 @@ ul {
     padding-inline-start: 40px;
     unicode-bidi: isolate;
 }
+
+
+@media (min-width: 768px) {
+    .bd-example {
+        --bd-example-padding: 1.5rem;
+        margin-right: 0;
+        margin-left: 0;
+        border-width: 1px;
+        border-radius: var(--bs-border-radius);
+    }
+}
+.bd-example {
+    --bd-example-padding: 1rem;
+    position: relative;
+    padding: var(--bd-example-padding);
+    margin: 0 -1.5rem 1rem;
+    border: solid var(--bs-border-color);
+    border-width: 1px 0;
+}
+.m-0 {
+    margin: 50px !important;
+}
+.border-0 {
+    border: 0 !important;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+::after, ::before {
+    box-sizing: border-box;
+}
+.bd-example::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+
+
+
+.only .card {
+    --mdb-card-spacer-y: 1.5rem;
+    --mdb-card-spacer-x: 1.5rem;
+    --mdb-card-title-spacer-y: 0.5rem;
+    --mdb-card-border-width: var(--mdb-border-width);
+    --mdb-card-border-radius: 0.5rem;
+    --mdb-card-box-shadow: 0 2px 15px -3px rgba(var(--mdb-box-shadow-color-rgb), 0.07), 0 10px 20px -2px rgba(var(--mdb-box-shadow-color-rgb), 0.04);
+    --mdb-card-inner-border-radius: calc(0.5rem - (var(--mdb-border-width)));
+    --mdb-card-cap-padding-y: 0.75rem;
+    --mdb-card-cap-padding-x: 1.5rem;
+    --mdb-card-cap-bg: rgba(255, 255, 255, 0);
+    --mdb-card-height: ;
+    --mdb-card-bg: var(--mdb-surface-bg);
+    --mdb-card-img-overlay-padding: 1.5rem;
+    --mdb-card-group-margin: 0.75rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 100px; 
+    margin-right: 100px;
+    height: var(--mdb-card-height);
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: var(--mdb-card-border-width) solid var(--mdb-card-border-color);
+    border-radius: var(--mdb-card-border-radius);
+    box-shadow: var(--mdb-card-box-shadow);
+}
+
+.name-container {
+    background-color: #7ce275;
+    padding: 10px; /* Add some padding for spacing */
+    border-radius: 5px; /* Add rounded corners */
+    margin-left: 20px; 
+  }
+
+  .white-container {
+    background-color: #ffffff; /* White background color */
+    padding: 10px; /* Add some padding for spacing */
+    border-radius: 5px; /* Add rounded corners */
+    margin-right: 20px;
+  }

@@ -47,9 +47,9 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="nav-link text-white" onClick="orgRegistered()">
+                <a href="#" class="nav-link text-white" onClick="assignNumber4();handleClick(event);">
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"></use></svg>
-                  Registered Organizations
+                  Registered Accounts
                 </a>
               </li>
             </ul>
@@ -59,7 +59,7 @@
       <div class="px-3 py-2 border-bottom mb-3">
         <div class="container d-flex flex-wrap justify-content-center">
           <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-            <input type="search" class="form-control" id="searchInput" placeholder="Search..." aria-label="Search">
+            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
           </form>
   
           <div class="text-end">
@@ -69,76 +69,81 @@
         </div>
       </div>
       <header>
-        <div class="donsubmissions-header p-3 pb-md-4 mx-auto text-center">
-          <h1 class="display-4 fw-normal text-body-emphasis">Donors' Submissions</h1>
+        <div class="account-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal text-body-emphasis">Account</h1>
         </div>
       </header>
     </header>
-    <script src="adminScript.js"></script>
-    <div class="bd-example m-0 border-0">
-    
-        <table class="table" id="dataTable">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">First Name</th>
-              <th scope="col">Last Name</th>
-              <th scope="col">Age</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Volunteer as</th>
-              <th scope="col">Address</th>
-              <th scope="col">Mobile Number</th>
-              <th scope="col">Email</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody class="table-group-divider">
-            <tr>
-              <th scope="row">1</th>
-              <td>Youssef</td>
-              <td>Ayman</td>
-              <td>21</td>
-              <td>M</td>
-              <td>Doctor</td>
-              <td>50 Ramsis St., Cairo</td>
-              <td>01234567</td>
-              <td>youssefayman@gmail.com</td>
-              <td><button class="btn btn-light" id="youssef-button" onClick="youssef()">Details</button>
-                <button class="btn btn-success" id="accept-button" onClick="accept(this)">Accept</button>
-                <button class="btn btn-danger" id="reject-button" onClick="reject(this)">Reject</button></td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Ahmed</td>
-                <td>Mohamed</td>
-                <td>20</td>
-                <td>M</td>
-                <td>Teacher</td>
-                <td>66 El-Hegaz St., Cairo</td>
-                <td>01234568</td>
-                <td>ahmedmohamed@gmail.com</td>
-                <td><button class="btn btn-light" id="ahmed-button" onClick="ahmed()">Details</button>
-                  <button class="btn btn-success" id="accept-button" onClick="accept(this)">Accept</button>
-                <button class="btn btn-danger" id="reject-button" onClick="reject(this)">Reject</button></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Asmaa</td>
-                <td>Mohamed</td>
-                <td>19</td>
-                <td>F</td>
-                <td>Doctor</td>
-                <td>80 El-Dokki St., Giza</td>
-                <td>01234569</td>
-                <td>asmaamohamed@gmail.com</td>
-                <td><button class="btn btn-light" id="asmaa-button" onClick="asmaa()">Details</button>
-                  <button class="btn btn-success" id="accept-button" onClick="accept(this)">Accept</button>
-                <button class="btn btn-danger" id="reject-button" onClick="reject(this)">Reject</button></td>
-            </tr>
-          </tbody>
-        </table>
-        
+    <div class="only">
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                <div class="col-sm-3">
+                    <p class="mb-0">First Name</p>
+                </div>
+                <div class="col-sm-9">
+                    <p class="text-muted mb-0">Nabil</p>
+                </div>
+                </div>
+                <hr>
+                <div class="row">
+                <div class="col-sm-3">
+                    <p class="mb-0">Last Name</p>
+                </div>
+                <div class="col-sm-9">
+                    <p class="text-muted mb-0">Karim</p>
+                </div>
+                </div>
+                <hr>
+                <div class="row">
+                <div class="col-sm-3">
+                    <p class="mb-0">Mobile</p>
+                </div>
+                <div class="col-sm-9">
+                    <p class="text-muted mb-0">01234555</p>
+                </div>
+                </div>
+                <hr>
+                <div class="row">
+                <div class="col-sm-3">
+                    <p class="mb-0">Email</p>
+                </div>
+                <div class="col-sm-9">
+                    <p class="text-muted mb-0">nabil.karim@gmail.com</p>
+                </div>
+                </div>
+                <hr>
+                <div class="row">
+                <div class="col-sm-3">
+                    <p class="mb-0">Username</p>
+                </div>
+                <div class="col-sm-9">
+                    <p class="text-muted mb-0">admin</p>
+                </div>
+                </div>
+                <hr>
+                <div class="row">
+                <div class="col-sm-3">
+                    <p class="mb-0">Password</p>
+                </div>
+                <div class="col-sm-9">
+                    <p class="text-muted mb-0" id="output"></p>
+                </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="d-flex gap-2 justify-content-center py-5">
+        <button class="btn btn-primary d-inline-flex align-items-center" type="button" onClick="pass()">Change Password</button>
+    </div>
+    <script>
+      // Retrieve the variable from localStorage
+      var myVariable = localStorage.getItem("myVariable");
+
+      // Display the variable in a div with id="output"
+      document.getElementById("output").innerHTML = myVariable;
+  </script>
+    <script src="adminScript.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
