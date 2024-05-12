@@ -18,8 +18,6 @@ function login() {
 function register() {
   window.location.href = "register.html";
 }
-<<<<<<< Updated upstream
-=======
 function checkRegister() {
   var register = document.getElementById("selectRegister").value;
   var common = document.getElementById("commonRegister");
@@ -105,4 +103,3 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
->>>>>>> Stashed changes
