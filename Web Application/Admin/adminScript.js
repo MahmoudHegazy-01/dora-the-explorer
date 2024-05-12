@@ -223,12 +223,9 @@ function performSearch() {
     for (var i = 1; i < rows.length; i++) { // Start from index 1 to skip header row
         var cells = rows[i].getElementsByTagName("td"); // Get cells (td) in each row
         var found = false;
-        for (var j = 0; j < cells.length; j++) {
-            var cellText = cells[j].textContent.toLowerCase(); // Get text content of the cell
-            if (cellText.includes(searchTerm)) {
-                found = true;
-                break;
-            }
+        var cellText = cells[0].textContent.toLowerCase(); // Get text content of the cell
+        if (cellText.includes(searchTerm)) {
+            found = true;
         }
         rows[i].style.display = found ? "" : "none"; // Show or hide row based on search result
     }
